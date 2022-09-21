@@ -1,5 +1,15 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only src/main.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "ts-node-dev": "1.1.8",
+    "typescript": "^4.8.3"
+  }
 }
