@@ -6,6 +6,9 @@
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
     "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "allowJs": true,
     "strict": true,
     "sourceMap": true,

@@ -1,4 +1,4 @@
-import { CURRENCY } from '../utils/currency.utils';
+import { CURRENCY } from '@/utils/currency.utils';
 
 export interface Price {
   value: number;

@@ -1,4 +1,4 @@
-import { Price } from './Price.type';
+import { Price } from '@/types/Price.type';
 
 export interface Card {
   name: string;
