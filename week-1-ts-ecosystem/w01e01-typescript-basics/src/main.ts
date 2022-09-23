@@ -1,5 +1,5 @@
 import { user } from "./data";
-import { hasGivenAge, hasAddress } from "./utils";
+import { hasAddress, isAdult } from "./utils";
 
 /**
  * Zasady co do pliku:
@@ -8,8 +8,6 @@ import { hasGivenAge, hasAddress } from "./utils";
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-
-const isAdult = hasGivenAge(18);
 
 hasAddress(user);
 
