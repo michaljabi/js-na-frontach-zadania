@@ -1,5 +1,14 @@
 {
   "name": "w01e03-object-oriented-structure",
+  "type": "module",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "start": "ts-node --esm src/main.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
 }
