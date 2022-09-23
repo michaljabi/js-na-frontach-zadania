@@ -1,4 +1,4 @@
-import { User } from "../types";
+import { User } from "../models";
 
 export const hasAddress = (user: User) => Boolean(user.address);
 export const hasGivenAge = (requiredAge: number) => (user: User) => {

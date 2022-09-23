@@ -1,4 +1,4 @@
-import { User } from "../types";
+import { User } from "../models";
 
 export const user: User = {
   name: "Andy",
