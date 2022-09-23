@@ -2,7 +2,10 @@
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
   "scripts": {
-    "start": "rm -rf dist && tsc ./src/main.ts --noImplicitAny --removeComments --outDir dist && node dist/main.js"
+    "prebuild":"rm -rf dist",
+    "build":"tsc -w ./src/main.ts --noImplicitAny --removeComments --outDir dist",
+    "prestart": "npm run build",
+    "start": "node dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
