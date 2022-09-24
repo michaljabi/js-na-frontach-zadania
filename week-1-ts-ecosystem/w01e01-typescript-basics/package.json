@@ -1,5 +1,11 @@
 {
   "name": "w01e01-typescript-basics",
+  "author": "Dariusz Gala",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "start": "npx tsx src/*"
+  },
+  "devDependencies": {
+    "typescript": "4.8.3"
+  }
 }
