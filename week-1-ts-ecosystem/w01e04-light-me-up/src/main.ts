@@ -1,21 +1,25 @@
-/**
- * W zasadzie tutaj możesz modyfikować wszystko poza wartościami:
- *
- * - 100 w przypadku PowerSource.
- * - 20 w przypadku LightBulb.
- *
- * Pamiętaj `PowerSource` ma nie wiedzieć — kto z niego korzysta!
- * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
- * */
+import { LightBulb } from './LightBulb.js'
+import { PowerSource } from './PowerSource.js'
 
-class PowerSource {
-  private energySupply = 100
+const powerSource1 = new PowerSource()
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
+console.log('Task 1')
 
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+console.log('Light bulb 1')
+new LightBulb().consumeOnce(powerSource1)
+console.log('Light bulb 2')
+new LightBulb().consumeOnce(powerSource1)
+console.log('Light bulb 3')
+new LightBulb().consumeOnce(powerSource1)
+console.log('Light bulb 4')
+new LightBulb().consumeOnce(powerSource1)
+console.log('Light bulb 5')
+new LightBulb().consumeOnce(powerSource1)
+console.log('Light bulb 6')
+new LightBulb().consumeOnce(powerSource1)
+
+console.log('Task 2')
+
+const powerSource2 = new PowerSource()
+console.log('Start consuming')
+new LightBulb().consumeTillFailure(powerSource2)
