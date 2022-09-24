@@ -1,4 +1,6 @@
-function createElement(tagName = 'div', className = '') {
+type HTMLTag = 'div' | 'p' | 'section' | 'article'
+
+function createElement<Tag extends HTMLTag>(tagName: Tag, className: string = '') {
   const element = document.createElement(tagName)
   if (className.length) {
     element.className = className
