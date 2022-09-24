@@ -5,16 +5,8 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-
-interface User {
-  name: string;
-  age: number;
-  email: string;
-  address: {
-    street: string;
-    no: number;
-  }
-}
+import {User} from './models/User';
+import {hasAddress, hasGivenAge} from './validators/userValidators';
 
 const user: User = {
   name: 'Andy',
@@ -25,15 +17,6 @@ const user: User = {
     no: 23,
   },
 }
-
-function hasAddress(user: User) {
-  return Boolean(user.address)
-}
-
-function hasGivenAge(requiredAge: number) {
-  return (user: User) => user.age >= requiredAge
-}
-
 const isAdult = hasGivenAge(18)
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
