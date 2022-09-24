@@ -5,8 +5,8 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-import { hasAddress, isAdult } from './utils';
-import { User } from './types';
+import { hasAddress, isAdult } from './user.validators';
+import { User } from './user.model';
 
 export const user: User = {
   name: 'Andy',
