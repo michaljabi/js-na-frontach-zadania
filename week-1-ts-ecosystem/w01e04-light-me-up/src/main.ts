@@ -1,3 +1,7 @@
+import { PowerSource } from './PowerSource';
+import { LightBulb } from './LightBulb';
+import { ErrorHandler } from './ErrorHandler';
+
 /**
  * W zasadzie tutaj możesz modyfikować wszystko poza wartościami:
  *
@@ -8,14 +12,20 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  private energySupply = 100
+// ZADANIE 1
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
+const powerSource = new PowerSource();
+const errorHandler = new ErrorHandler();
+const lightBulb1 = new LightBulb(powerSource, errorHandler);
+const lightBulb2 = new LightBulb(powerSource, errorHandler);
+const lightBulb3 = new LightBulb(powerSource, errorHandler);
+const lightBulb4 = new LightBulb(powerSource, errorHandler);
+const lightBulb5 = new LightBulb(powerSource, errorHandler);
+const lightBulb6 = new LightBulb(powerSource, errorHandler);
 
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+lightBulb1.light();
+lightBulb2.light();
+lightBulb3.light();
+lightBulb4.light();
+lightBulb5.light();
+lightBulb6.light(); //poleci exception
