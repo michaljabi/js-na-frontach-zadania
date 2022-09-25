@@ -8,14 +8,22 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  private energySupply = 100
+import { LightBulb } from "./light";
+import { PowerSource } from "./power-source";
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
+const powerSource = new PowerSource();
 
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+const light1 = new LightBulb(powerSource);
+const light2 = new LightBulb(powerSource);
+const light3 = new LightBulb(powerSource);
+const light4 = new LightBulb(powerSource);
+const light5 = new LightBulb(powerSource);
+const light = new LightBulb(powerSource);
+
+// light1.light();
+// light2.light();
+// light3.light();
+// light4.light();
+// light5.light();
+
+light.lightWithTimer(5);
