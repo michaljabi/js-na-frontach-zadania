@@ -1,8 +1,9 @@
-import { div } from '../framework/dom-creators.js'
-import { cartPanel } from './cart-panel.component.js'
-import { hero } from './hero.component.ts'
+import { div } from '../framework/dom-creators'
+import { cartPanel } from './cart-panel.component'
+import {Hero, hero} from './hero.component'
+import {Item} from "./cart-item.component";
 
-const items = [
+const items: Item[]  = [
   {
     name: 'Tomatoes',
     amount: 2,
@@ -17,9 +18,9 @@ const items = [
   },
 ]
 
-const header = { title: 'Shopping App', subTitle: 'buy and sell' }
+const header: Hero = { title: 'Shopping App', subTitle: 'buy and sell' }
 
-export function root() {
+export function root(): HTMLElement {
   const $hero = hero(header);
   const $container = div('container')
   $container.append($hero, cartPanel({ items }))

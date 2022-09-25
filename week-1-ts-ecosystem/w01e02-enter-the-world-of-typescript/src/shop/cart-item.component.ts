@@ -5,7 +5,7 @@ export type Currency = 'PLN' | 'USD';
 
 export interface Price {
   value: number,
-  currency: Currency
+  currency?: Currency
 }
 
 export interface Item {
