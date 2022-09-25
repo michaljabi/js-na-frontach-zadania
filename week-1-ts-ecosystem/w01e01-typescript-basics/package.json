@@ -1,5 +1,12 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "4.8.3"
+  }
 }
