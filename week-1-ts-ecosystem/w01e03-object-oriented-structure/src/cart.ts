@@ -1,16 +1,5 @@
 import { v4 } from 'uuid';
-
-type CartType = 'BUY_NOW' | 'AUCTION' | 'FOR_FREE';
-
-type Currency = 'PLN';
-
-export interface ICartItem {
-    name: string
-    count: number
-    price: number
-    currency: Currency
-    type: CartType
-}
+import { CartType, Currency, ICartItem } from './cart.model';
 
 export class CartItem implements ICartItem {
     id: string
@@ -22,19 +11,22 @@ export class CartItem implements ICartItem {
         public type: CartType) {
             this.id = v4();
         }
+
+        update(count: number): void {
+            this.count = count;
+        }
 }
 
 export class Cart {
     private items: Map<string, CartItem> = new Map();
-    constructor(private type: CartType) {}
+    constructor(public type: CartType) {}
 
     add(item: CartItem): string {
+        if(!(item instanceof CartItem)) {
+            this.throwCartItemTypeError();
+        }
         if(item.type !== this.type) {
-            throw new Error(
-                `You are trying add wrong product type into the cart.
-                 This cart is type ${this.type} but product has type: ${item.type}
-                `
-            );
+            this.throwCartTypeError(item);
         }
         this.items.set(item.id, item);
         return item.id;
@@ -59,5 +51,19 @@ export class Cart {
     }
     remove(item: CartItem): void {
         this.items.delete(item.id);
+    }
+
+    private throwCartTypeError(item: CartItem): void {
+        throw new Error(
+            `You are trying to add the wrong product type to the cart.
+            This cart is type ${this.type} and product has type: ${item.type}`
+        );
+    }
+
+    private throwCartItemTypeError(): void {
+        throw new Error(
+            `You are trying to add into the cart object which one is not CartItem instance.
+            Create a product with CartItem class`
+        );
     }
 }
