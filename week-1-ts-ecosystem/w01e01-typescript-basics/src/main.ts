@@ -1,3 +1,5 @@
+import { User } from "./interfaces/user.interface";
+
 /**
  * Zasady co do pliku:
  *
@@ -6,25 +8,26 @@
  *
  * */
 
-const user: any = {
-  name: 'Andy',
+const user: User = {
+  name: "Andy",
   age: 30,
-  email: 'andy@mail-me-tommorow.com',
+  email: "andy@mail-me-tommorow.com",
   address: {
-    street: 'Strange Alley',
+    street: "Strange Alley",
     no: 23,
   },
+};
+
+function hasAddress(user: User): boolean {
+  return Boolean(user.address);
 }
 
-function hasAddress(user: any): any {
-  return Boolean(user.address)
+function hasGivenAge(requiredAge: number): Function { 
+  return (user: User):boolean => user.age >= requiredAge;
+
 }
 
-function hasGivenAge(requiredAge: any): any {
-  return (user: any): any => user.age >= requiredAge
-}
+const isAdult = hasGivenAge(18);
 
-const isAdult = hasGivenAge(18)
-
-console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
-console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
+console.log(`User ${user.name} is ${isAdult(user) ? "adult" : "minor"}`);
+console.log(`and has${hasAddress(user) ? "" : " no"} address`);
