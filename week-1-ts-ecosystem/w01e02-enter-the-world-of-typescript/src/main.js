@@ -1,4 +1,4 @@
-import { root } from './shop/root.component'
+import { root } from './shop/root.component.js'
 
 const $app = document.querySelector('#app')
 
