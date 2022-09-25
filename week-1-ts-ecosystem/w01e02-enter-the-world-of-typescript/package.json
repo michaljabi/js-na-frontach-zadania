@@ -1,5 +1,12 @@
 {
   "name": "w01e02-enter-the-world-of-typescript",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "build": "tsc --build",
+    "postbuild": "cp index.html ./dist",
+    "clean": "tsc --build --clean"
+  },
+  "devDependencies": {
+    "typescript": "4.8.3"
+  }
 }
