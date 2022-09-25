@@ -1,4 +1,4 @@
-export type Adress = {
+export interface Adress {
     street: string;
     no: number;
 };
