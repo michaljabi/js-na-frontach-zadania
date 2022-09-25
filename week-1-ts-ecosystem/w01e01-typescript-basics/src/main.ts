@@ -1,30 +1,19 @@
-/**
- * Zasady co do pliku:
- *
- * Możesz dowolnie modyfikować zawartość tego pliku,
- * całość programu musi jednak działać tak jak do tej pory !
- *
- * */
+import { hasAddress, hasGivenAge } from './common/validators';
+import { User } from './models/users';
 
-const user: any = {
+export const user: User = {
   name: 'Andy',
   age: 30,
-  email: 'andy@mail-me-tommorow.com',
+  email: 'andy@mail-me-tomorrow.com',
   address: {
     street: 'Strange Alley',
-    no: 23,
-  },
-}
+    no: 23
+  }
+};
 
-function hasAddress(user: any): any {
-  return Boolean(user.address)
-}
+const isAdult = hasGivenAge(18);
 
-function hasGivenAge(requiredAge: any): any {
-  return (user: any): any => user.age >= requiredAge
-}
-
-const isAdult = hasGivenAge(18)
-
-console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
-console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
+// eslint-disable-next-line no-console
+console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`);
+// eslint-disable-next-line no-console
+console.log(`and has${hasAddress(user) ? '' : ' no'} address`);
