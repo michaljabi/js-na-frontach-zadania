@@ -1,5 +1,7 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "dev": "ts-node src/main.ts"
+  }
 }

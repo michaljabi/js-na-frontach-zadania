@@ -9,3 +9,19 @@
  * Przygotuj koszyki dla każdego rodzaju produktów.
  * - po prostu: wykaż, że przygotowana logika i modele danych — działają :)
  * */
+
+import { Cart, CartItem } from './cart';
+
+
+const cart = new Cart('BUY_NOW');
+
+const apple = new CartItem('Apple', 2, 4, 'PLN', 'BUY_NOW');
+const car = new CartItem('Car', 1, 10000, 'PLN', 'BUY_NOW');
+const phone = new CartItem('Phone', 1, 900, 'PLN', 'BUY_NOW');
+
+cart.add(apple);
+cart.add(car);
+cart.add(phone);
+
+console.log(cart.getAll())
+console.log(cart.getCartItemsSum())
