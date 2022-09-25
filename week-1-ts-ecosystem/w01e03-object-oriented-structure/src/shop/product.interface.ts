@@ -1,5 +1,5 @@
 interface CommonInterface {
-    id?: number;
+    id?: string;
     name: string;
     amount: number;
 }

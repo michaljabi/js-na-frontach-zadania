@@ -26,6 +26,8 @@ products.add({
 
 console.log('products', products.getAll());
 
+const items = products.getAll();
+
 function addItemToCart(product) {
     const existingCart = existingCarts.get(product.type);
 
@@ -41,13 +43,13 @@ function addItemToCart(product) {
     existingCart.addItem(product);
 }
 
-addItemToCart(products.get(1));
+addItemToCart(products.get(items[0].id));
 
 console.log('SUMA Koszyk Aukcje: ', existingCarts.get('AUCTION').getSum());
 
-addItemToCart(products.get(2));
+addItemToCart(products.get(items[1].id));
 
-addItemToCart(products.get(1));
+addItemToCart(products.get(items[0].id));
 
 console.log('SUMA Koszyk Aukcje: ', existingCarts.get('AUCTION')?.getSum());
 
@@ -57,7 +59,7 @@ console.log('SUMA Koszyk Buy now: ', existingCarts.get('BUY_NOW')?.getSum());
 
 console.log(existingCarts.get('AUCTION').getItems());
 
-existingCarts.get('AUCTION').removeItem(1);
+existingCarts.get('AUCTION').removeItem(items[0].id);
 
 console.log(existingCarts.get('AUCTION').getItems());
 
