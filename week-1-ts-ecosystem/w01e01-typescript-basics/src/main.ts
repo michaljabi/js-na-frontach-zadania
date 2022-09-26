@@ -6,25 +6,11 @@
  *
  * */
 
-const user: any = {
-  name: 'Andy',
-  age: 30,
-  email: 'andy@mail-me-tommorow.com',
-  address: {
-    street: 'Strange Alley',
-    no: 23,
-  },
-}
+import { user } from "./data/userData";
+import hasAddress from "./helpers/hasAddress";
+import hasGivenAge from "./helpers/hasGivenAge";
 
-function hasAddress(user: any): any {
-  return Boolean(user.address)
-}
+const isAdult = hasGivenAge(18);
 
-function hasGivenAge(requiredAge: any): any {
-  return (user: any): any => user.age >= requiredAge
-}
-
-const isAdult = hasGivenAge(18)
-
-console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
-console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
+console.log(`User ${user.name} is ${isAdult(user) ? "adult" : "minor"}`);
+console.log(`and has${hasAddress(user) ? "" : " no"} address`);
