@@ -4,6 +4,7 @@
   "scripts": {
     "test": "echo \"Error: no tests installed\" && exit 1",
     "build": "tsc",
-    "start": "node server.js"
+    "start": "ts-node src/main.ts"
+    
   }
 }
