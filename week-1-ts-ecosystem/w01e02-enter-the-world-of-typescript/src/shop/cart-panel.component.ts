@@ -1,6 +1,6 @@
-import { article, p } from '../framework/dom-creators.js'
-import { cartItemSum } from './cart-item-sum.component.js'
-import {cartItem, Item} from './cart-item.component.js'
+import { article, p } from '../framework/dom-creators'
+import { cartItemSum } from './cart-item-sum.component'
+import {cartItem, Item} from './cart-item.component'
 
 export interface CartPanel {
   heading?: string,

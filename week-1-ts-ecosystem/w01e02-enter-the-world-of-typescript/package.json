@@ -2,11 +2,14 @@
   "name": "w01e02-enter-the-world-of-typescript",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc --build",
-    "postbuild": "cp index.html ./dist",
-    "clean": "tsc --build --clean"
+    "build:dev": "webpack build --config ./webpack.development.config.js",
+    "build:prod": "webpack build --config ./webpack.config.js"
   },
   "devDependencies": {
-    "typescript": "4.8.3"
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "4.8.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

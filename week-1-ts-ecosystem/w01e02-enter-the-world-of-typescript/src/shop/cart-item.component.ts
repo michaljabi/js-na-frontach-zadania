@@ -1,4 +1,4 @@
-import { div } from '../framework/dom-creators.js'
+import { div } from '../framework/dom-creators'
 
 export type Unit = 'kg' | 'g' | 'mg';
 export type Currency = 'PLN' | 'USD';

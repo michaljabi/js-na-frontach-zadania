@@ -1,4 +1,4 @@
-import { div, p, section } from '../framework/dom-creators.js'
+import { div, p, section } from '../framework/dom-creators'
 
 export interface Hero {
   title: string;
