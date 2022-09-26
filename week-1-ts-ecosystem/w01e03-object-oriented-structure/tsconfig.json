@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2020",
+    "outFile": "build/main.js",
+    "module": "AMD",
+    "moduleResolution": "Node",
+  },
+  "include": ["src/**/*.ts"]
+}
