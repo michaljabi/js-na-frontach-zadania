@@ -1,5 +1,4 @@
 function createElement(tagName = 'div', className = '') {
-  // eslint-disable-next-line no-undef
   const element = document.createElement(tagName);
   if (className.length) {
     element.className = className;
