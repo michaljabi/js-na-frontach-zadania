@@ -1,5 +1,11 @@
 {
   "name": "w01e03-object-oriented-structure",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "compilerOptions": {
+    "target": "es5"
+  }
 }
