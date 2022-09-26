@@ -1,6 +1,6 @@
 import { article, p } from '../framework/dom-creators.js';
-import { cartItemSum } from './cart-item-sum.component.js';
-import { cartItem } from './cart-item.component.js';
+import cartItemSum from './cart-item-sum.component.js';
+import cartItem from './cart-item.component.js';
 import type Item from '../model/item';
 
 interface ICartPanelProps {
