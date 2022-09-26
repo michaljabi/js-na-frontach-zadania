@@ -9,3 +9,10 @@
  * Przygotuj koszyki dla każdego rodzaju produktów.
  * - po prostu: wykaż, że przygotowana logika i modele danych — działają :)
  * */
+
+
+// const Products = Array<Product>
+const product1 = new Product("Kup Teraz", 123);
+
+console.log(product1)
+

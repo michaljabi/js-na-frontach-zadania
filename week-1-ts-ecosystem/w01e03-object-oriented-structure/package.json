@@ -1,5 +1,9 @@
 {
   "name": "w01e03-object-oriented-structure",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "test": "echo \"Error: no tests installed\" && exit 1",
+    "build": "tsc",
+    "start": "node server.js"
+  }
 }
