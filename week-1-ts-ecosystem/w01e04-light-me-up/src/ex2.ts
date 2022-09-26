@@ -7,15 +7,11 @@
  * Pamiętaj `PowerSource` ma nie wiedzieć — kto z niego korzysta!
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
+import { PowerSource } from "./PowerSource";
+import { LightBulb } from "./LightBulb";
 
-class PowerSource {
-  private energySupply = 100
+const powerSource = new PowerSource();
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
+const lightBulb1 = new LightBulb(powerSource);
 
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+lightBulb1.lightUpFor(6);
