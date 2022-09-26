@@ -1,3 +1,8 @@
+export interface CartPanel {
+  heading?: string;
+  items: CartItem[];
+}
+
 export interface CartItemSum {
   value: number;
   currency?: string;
