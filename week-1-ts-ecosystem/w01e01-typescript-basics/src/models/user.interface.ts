@@ -1,4 +1,7 @@
-import { Adress } from "./adress.interface";
+export interface Adress {
+  street: string;
+  no: number;
+};
 
 export interface User {
     name: string;

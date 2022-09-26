@@ -1,4 +1,5 @@
-import { User } from "./interfaces/user.interface";
+import { User } from "./models/user.interface";
+import { hasAddress, hasGivenAge } from "./models/user.validators";
 
 /**
  * Zasady co do pliku:
@@ -17,15 +18,6 @@ const user: User = {
     no: 23,
   },
 };
-
-function hasAddress(user: User): boolean {
-  return Boolean(user.address);
-}
-
-function hasGivenAge(requiredAge: number): Function { 
-  return (user: User):boolean => user.age >= requiredAge;
-
-}
 
 const isAdult = hasGivenAge(18);
 
