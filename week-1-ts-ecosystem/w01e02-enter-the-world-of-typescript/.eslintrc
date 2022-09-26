@@ -12,7 +12,6 @@
     }
   },
   "rules": {
-    "@typescript-eslint/no-explicit-any": 0,
     "import/prefer-default-export": 0,
     "prettier/prettier": 2
   }
