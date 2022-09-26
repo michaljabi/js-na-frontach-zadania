@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "devDependencies": {
+    "typescript": "^4.8.3",
     "vite": "^3.1.3"
   }
 }
