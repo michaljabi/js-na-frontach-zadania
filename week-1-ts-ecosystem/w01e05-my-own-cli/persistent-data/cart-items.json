@@ -1,5 +1,1 @@
-{
-  "forFree": [],
-  "buyNow": [],
-  "auctions": []
-}
+{"forFree":[],"buyNow":[{"id":"2d425f9e-3067-4271-9e50-38faa68a6784","name":"Fantastic Steel Keyboard","price":503,"amount":7},{"id":"a02f9ba7-0269-4533-ab86-aa22e82e1a6c","name":"Oriental Steel Chair","price":927,"amount":2},{"id":"54dba0f0-884f-4e2a-b901-d40a606ed377","name":"Sleek Bronze Towels","price":584,"amount":3}],"auction":[{"id":"c2a18b82-df64-4e2b-a05f-7997f82331d6","name":"Recycled Concrete Keyboard","price":731,"amount":6},{"id":"19ab50e4-6be5-4039-a882-2fdcc07979b9","name":"Small Soft Keyboard","price":576,"amount":4},{"id":"6f613c8d-8e5a-454d-ae2d-eb9a8f46331e","name":"Elegant Fresh Chips","price":925,"amount":5},{"id":"95047d23-a840-46bb-b58e-5fe17d4f7807","name":"Oriental Rubber Fish","price":159,"amount":10}],"free":[{"id":"4b41fde8-fbca-4b50-b6d1-ad6da4c3647e","name":"Unbranded Soft Ball","price":null,"amount":6},{"id":"d641bbdb-d69a-40f6-b01b-8c2d1b9964f2","name":"Oriental Soft Keyboard","price":null,"amount":10}]}
