@@ -11,6 +11,6 @@ export interface cartItemType {
 }
 
 export interface cartPanelType {
-  heading: string;
+  heading?: string;
   items: cartItemType[];
 }

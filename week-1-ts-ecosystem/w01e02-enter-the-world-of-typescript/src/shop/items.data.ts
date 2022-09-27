@@ -1,4 +1,6 @@
-export const items = [
+import { cartItemType } from "./cart/cart.types";
+
+export const items: cartItemType[] = [
     {
         name: 'Tomatoes',
         amount: 2,
