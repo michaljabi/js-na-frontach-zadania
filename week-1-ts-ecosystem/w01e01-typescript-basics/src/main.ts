@@ -5,12 +5,11 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-import {hasAddress} from "./addressUtils";
-import {hasGivenAge} from "./ageUtils";
-import {user} from "./model";
 
+import { hasAddress, hasGivenAge } from "./validators/userValidators";
+import { user } from "./data/userData";
 
-const isAdult = hasGivenAge(18)
+const isAdult = hasGivenAge(18);
 
-console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
-console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
+console.log(`User ${user.name} is ${isAdult(user) ? "adult" : "minor"}`);
+console.log(`and has${hasAddress(user) ? "" : " no"} address`);
