@@ -1,5 +1,5 @@
+import { cartItemType } from '../cart.types';
 import { div } from '../../../framework/dom-creators';
-import { cartItemType } from './cart-item.types';
 
 export const cartItem = ({ name, amount, unit, price }: cartItemType): HTMLElement => {
   const $panelBlock = div('panel-block');

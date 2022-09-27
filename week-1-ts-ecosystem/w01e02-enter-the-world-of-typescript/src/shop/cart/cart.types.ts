@@ -9,3 +9,8 @@ export interface cartItemType {
   unit: 'kg';
   price: priceType;
 }
+
+export interface cartPanelType {
+  heading: string;
+  items: cartItemType[];
+}
