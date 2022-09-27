@@ -1,6 +1,6 @@
-export type IFunction = (user: IUser) => boolean;
+export type AgeValidator = (user: User) => boolean;
 
-export interface IUser {
+export interface User {
   name: string;
   age: number;
   email: string;

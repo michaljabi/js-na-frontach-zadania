@@ -6,8 +6,8 @@
  *
  * */
 
-import { user } from "./user";
-import { hasAddress, hasGivenAge } from "./logic";
+import { user } from "./user-model";
+import { hasAddress, hasGivenAge } from "./user-validators";
 
 const isAdult = hasGivenAge(18);
 
