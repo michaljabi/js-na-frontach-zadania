@@ -1,8 +1,8 @@
-import { article, p } from "../framework/dom-creators";
+import { article, p } from "../../framework/dom-creators";
 import { cartItemSum } from "./cart-item-sum.component";
 import { cartProduct } from "./cart-item.component";
 
-import { Item } from "./types/item.types";
+import { Item } from "../item.model";
 
 type CartPanelProps = {
   heading?: string;

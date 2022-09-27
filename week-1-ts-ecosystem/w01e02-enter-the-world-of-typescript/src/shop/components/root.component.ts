@@ -1,8 +1,8 @@
-import { div } from "../framework/dom-creators";
-import { cartPanel } from "./cart-panel.component";
+import { div } from "../../framework/dom-creators";
+import { cartPanel } from "../cart/cart-panel.component";
 import { hero } from "./hero.component";
 
-import { Item } from "./types/item.types";
+import { Item } from "../item.model";
 
 const items: Item[] = [
   {

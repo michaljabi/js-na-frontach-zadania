@@ -1,4 +1,4 @@
-import { div } from "../framework/dom-creators";
+import { div } from "../../framework/dom-creators";
 
 type Props = {
   value: number;
