@@ -1,6 +1,6 @@
 import { div } from '../framework/dom-creators.ts';
 import { cartPanel } from './cart/cart-panel/cart-panel.component.ts';
-import { hero } from './hero.component.js';
+import { hero } from './hero.component.ts';
 import { items } from './items.data.ts';
 
 export function root() {
