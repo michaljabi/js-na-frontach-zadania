@@ -1,8 +1,29 @@
 # TypeScript - Object-Oriented Structure
 
+### Start project:
+
+1. Install dependencies by running `pnpm i`
+2. Start app:
+   1. In development mode by running `pnpm dev`
+   2. In production mode by running `pnpm build` and `pnpm start`
+
+### Scripts:
+
+- `dev` - Run dev server (auto-reload)
+- `build` - Build production app
+- `start` - Start production app
+- `lint` - Lint code with eslint
+- `format` - Format code with prettier
+
+---
+
+---
+
+---
+
 ### Powód:
 
-> Przypomnienie sobie i zastosowanie klas w TypeScript.  
+> Przypomnienie sobie i zastosowanie klas w TypeScript.
 > Różnice pomiędzy klasą a instancją klasy. Zależności pomiędzy klasami.
 
 ---
@@ -10,7 +31,7 @@
 ### Narracja:
 
 Niezdecydowanie naszego Klienta osiągnęło punkt krytyczny. Jego _"Aplikacja do handlu"_, zmienia się z dnia na dzień jak w kalejdoskopie 😱.
-Pomimo tego, że na ten moment nie wiemy nawet, czy będzie to finalnie aplikacja z `GUI` i pisać mamy te _Front-End'y_... czy jednak będzie to prosty `CLI` i powinniśmy uderzać w _Back-End_.  
+Pomimo tego, że na ten moment nie wiemy nawet, czy będzie to finalnie aplikacja z `GUI` i pisać mamy te _Front-End'y_... czy jednak będzie to prosty `CLI` i powinniśmy uderzać w _Back-End_.
 Jednak nasz nieustraszony _TeamLead_ znalazł część logiki, która może powstać w postaci "serwisowej", niezależnie od tego jakie _End'y_ nas czekają. Okazuje się, że warstwa działania _Koszyka_ i rodzaj _Prouktów_ są nam już doskonale znane i mamy potwierdzenie od Klienta, że "tak już zostaje... na razie.😑". Działajmy więc — czas wybudować model i sposób działania koszyka!
 
 ---
