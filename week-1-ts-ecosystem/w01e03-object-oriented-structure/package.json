@@ -5,6 +5,8 @@
     "test": "echo \"Error: no tests installed\" && exit 1",
     "build": "tsc",
     "start": "ts-node src/main.ts"
-    
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
   }
 }
