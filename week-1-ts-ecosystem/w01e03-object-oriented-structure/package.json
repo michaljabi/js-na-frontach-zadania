@@ -3,13 +3,14 @@
   "author": "Dariusz Gala",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon src/main.ts",
-    "build": "npx tsc"
+    "watch": "nodemon src/main.ts",
+    "build": "tsc --project tsconfig.build.json"
   },
   "devDependencies": {
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "amd-loader": "^0.0.8",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",

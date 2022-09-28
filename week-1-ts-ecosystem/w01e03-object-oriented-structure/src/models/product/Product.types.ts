@@ -4,11 +4,14 @@ enum PRODUCT_TYPE {
   free = 'free',
 }
 
-type ProductType = {
+interface IProduct {
   name: string;
+  amount: number;
+}
+
+interface IProductWithPrice extends IProduct {
   price: number;
-  currency?: string;
-};
+}
 
 export { PRODUCT_TYPE };
-export type { ProductType };
+export type {IProduct, IProductWithPrice};
