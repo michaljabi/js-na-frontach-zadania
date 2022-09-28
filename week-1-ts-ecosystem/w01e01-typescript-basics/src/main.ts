@@ -1,7 +1,7 @@
-import {hasAddress, hasGivenAge} from "./utils";
-import {UserType} from "./types";
+import {hasAddress, hasGivenAge} from "./user";
+import {User} from "./user";
 
-const user: UserType = {
+const user: User = {
   name: 'Andy',
   age: 30,
   email: 'andy@mail-me-tommorow.com',

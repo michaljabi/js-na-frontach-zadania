@@ -1,16 +1,15 @@
-type AddressType = {
+type UserAddress = {
     street: string;
     no: number;
 }
 
-type UserType = {
+type User = {
     name: string;
     age: number;
     email: string;
-    address: AddressType;
+    address: UserAddress;
 };
 
 export type {
-    AddressType,
-    UserType,
+    User,
 };

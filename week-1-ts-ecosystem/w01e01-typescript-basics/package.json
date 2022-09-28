@@ -3,9 +3,11 @@
   "author": "Dariusz Gala",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx tsx src/*"
+    "build": "tsx src/main.ts",
+    "watch": "tsx watch src/main.ts"
   },
   "devDependencies": {
+    "tsx": "^3.9.0",
     "typescript": "4.8.3"
   }
 }
