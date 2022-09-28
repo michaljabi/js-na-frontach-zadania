@@ -14,7 +14,7 @@ export class Cart implements ICart {
   };
 
   deleteProductById(id: string): void {
-    this.products.filter((product) => product.id === id);
+    this.products = this.products.filter((product) => product.id !== id);
   }
 
   getAllProducts(): IProduct[] {
@@ -22,7 +22,7 @@ export class Cart implements ICart {
   }
 
   getCartItemsQuantity(): number {
-    return this.products.length;
+    return this.products.reduce((acc, curr) => acc + curr.quantity, 0);
   }
 
   getProductById(id: string): IProduct | undefined {
@@ -30,13 +30,14 @@ export class Cart implements ICart {
   }
 
   getTotalCost(): number {
-    return this.products.reduce((acc, curr) => acc + (curr.price?.value ?? 0), 0);
+    return this.products.reduce((acc, curr) => acc + curr.quantity * (curr.price?.value ?? 0), 0);
   }
 
-  updateProductById(id: string, productUpdated: IProduct): void {
+  updateProductById(id: string, productUpdated: Partial<IProduct>): void {
     this.products = this.products.map((product) => {
       if (product.id === id) {
         product = {
+          ...product,
           ...productUpdated,
         };
       }
