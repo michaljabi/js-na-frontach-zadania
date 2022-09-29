@@ -1,8 +1,12 @@
 {
   "name": "w01e03-object-oriented-structure",
   "version": "1.0.0",
+  "type": "commonjs",
   "scripts": {
-    "start": "nodemon src/main.ts"
+    "dev": "nodemon src/main.ts",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/main.js"
   },
   "main": "src/main.js",
   "dependencies": {
