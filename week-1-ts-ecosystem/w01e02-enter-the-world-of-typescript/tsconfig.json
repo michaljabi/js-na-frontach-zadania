@@ -13,8 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "skipLibCheck": true,
-    "allowJs": true
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
