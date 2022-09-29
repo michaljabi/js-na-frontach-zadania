@@ -2,7 +2,19 @@ import { div } from '../framework/dom-creators.js'
 import { cartPanel } from './cart-panel.component.js'
 import { hero } from './hero.component.js'
 
-const items = [
+interface Price {
+  value: number;
+  currency: 'PLN' | 'USD';
+}
+
+interface Item {
+  name: string;
+  amount: number;
+  unit: 'kg' | 'g';
+  price: Price;
+}
+
+const items: Item[] = [
   {
     name: 'Tomatoes',
     amount: 2,
