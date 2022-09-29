@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "build:clean": "npm run build -- --clean"
   },
-  "type": "commonjs",
   "devDependencies": {
     "typescript": "4.8.3"
   }
