@@ -1,5 +1,5 @@
 import { div } from '../framework/dom-creators'
-import {Price} from "./root.component";
+import { Price } from "../model";
 
 export function cartItemSum({ value, currency = 'PLN' }: Price) {
   const $panelBlock = div('panel-block is-justify-content-end')

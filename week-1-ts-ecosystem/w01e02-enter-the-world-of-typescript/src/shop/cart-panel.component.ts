@@ -1,7 +1,7 @@
 import { article, p } from '../framework/dom-creators'
-import { cartItemSum } from './cart-item-sum.component.js'
-import { cartItem } from './cart-item.component.js'
-import { Item } from "./root.component";
+import { Item } from '../model';
+import { cartItemSum } from './cart-item-sum.component'
+import { cartItem } from './cart-item.component'
 
 interface CartPanel {
   heading?: string;

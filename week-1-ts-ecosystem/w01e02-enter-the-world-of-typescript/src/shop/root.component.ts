@@ -1,36 +1,8 @@
 import { div } from '../framework/dom-creators'
 import { cartPanel } from './cart-panel.component'
 import { hero } from './hero.component'
+import { items } from "../items.data";
 
-type Currency = 'PLN' | 'USD'
-type Unit = 'kg' | 'g'
-
-export interface Price {
-  value: number;
-  currency: Currency;
-}
-
-export interface Item {
-  name: string;
-  amount: number;
-  unit: Unit;
-  price: Price;
-}
-
-const items: Item[] = [
-  {
-    name: 'Tomatoes',
-    amount: 2,
-    unit: 'kg',
-    price: { value: 20, currency: 'PLN' },
-  },
-  {
-    name: 'Banana',
-    amount: 5,
-    unit: 'kg',
-    price: { value: 36, currency: 'PLN' },
-  },
-]
 
 export function root() {
   const $hero = hero({ title: 'Shopping App', subTitle: 'buy and sell' })
