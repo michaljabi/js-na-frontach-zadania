@@ -6,6 +6,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "downlevelIteration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "removeComments": true,
+    "noImplicitAny": true
   }
 }
