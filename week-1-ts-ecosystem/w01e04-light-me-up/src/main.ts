@@ -32,14 +32,17 @@ class LightBulb {
   }
 }
 
-const lightBulb = new LightBulb();
-const lightBulb2 = new LightBulb();
-
 const powerSource = new PowerSource();
 
-lightBulb.connect(powerSource);
-console.log(powerSource.showPowerSupply());
-lightBulb2.connect(powerSource);
-console.log(powerSource.showPowerSupply());
+const abazurek: Record<string, LightBulb> = {};
+
+Array.from({ length: 6 }).forEach((_, i) => {
+  abazurek[`lightBulb${i + 1}`] = new LightBulb();
+});
+
+Object.entries(abazurek).forEach(([, value]) => {
+  value.connect(powerSource);
+  console.log(powerSource.showPowerSupply());
+});
 
 export {};
