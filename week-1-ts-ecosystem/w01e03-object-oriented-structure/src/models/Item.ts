@@ -1,5 +1,5 @@
 export abstract class Item {
-  readonly id: string;
+  id: string;
   abstract value?: number;
   abstract currency?: string;
   name: string;

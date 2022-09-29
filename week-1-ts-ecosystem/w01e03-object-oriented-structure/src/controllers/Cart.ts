@@ -12,7 +12,12 @@ export class Cart<Product extends Item> {
   }
 
   updateById(id: string, product: Product) {
-    this.producs.set(id, product);
+    if (!!this.producs.get(id)) {
+      product.id = id;
+      this.producs.set(id, product);
+      return;
+    }
+    console.log("Nie znaleziono produktu o podanym id");
   }
 
   removeById(id: string) {
