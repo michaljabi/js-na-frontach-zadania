@@ -1,8 +1,14 @@
-import { article, p } from '../framework/dom-creators.js'
+import { article, p } from '../framework/dom-creators'
 import { cartItemSum } from './cart-item-sum.component.js'
 import { cartItem } from './cart-item.component.js'
+import { Item } from "./root.component";
 
-export function cartPanel({ heading = 'Cart Items', items }) {
+interface CartPanel {
+  heading?: string;
+  items: Item[];
+}
+
+export function cartPanel({ heading = 'Cart Items', items}: CartPanel) {
   const $article = article('panel is-primary my-6 w-75 mx-auto')
   const $heading = p('panel-heading')
   $heading.textContent = heading
