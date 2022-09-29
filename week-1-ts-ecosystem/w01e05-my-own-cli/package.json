@@ -1,0 +1,10 @@
+{
+  "name": "w01e05-my-own-cli",
+  "version": "1.0.0",
+  "description": "_~ \"Aplikacja do handlu\" strikes back 😱_",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

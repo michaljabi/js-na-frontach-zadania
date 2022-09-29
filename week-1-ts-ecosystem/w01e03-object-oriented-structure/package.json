@@ -2,7 +2,8 @@
   "name": "w01e03-object-oriented-structure",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "build": "tsc --project tsconfig.json"
   },
   "devDependencies": {
     "@types/node": "18.7.20",
