@@ -1,7 +1,7 @@
 import { div } from '../framework/dom-creators';
 import { cartPanel } from './cart-panel.component';
 import { hero } from './hero.component';
-import { items } from '../model/items';
+import { items } from '../models/item';
 
 export function root() {
   const $hero = hero({ title: 'Shopping App', subTitle: 'buy and sell' });
