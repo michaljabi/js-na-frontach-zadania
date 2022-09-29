@@ -1,7 +1,4 @@
-interface Address {
-  street: string;
-  no: number;
-}
+import {Address} from "./Address";
 
 interface User {
   name: string;
@@ -10,4 +7,4 @@ interface User {
   address?: Address;
 }
 
-export {Address, User}
+export {User}

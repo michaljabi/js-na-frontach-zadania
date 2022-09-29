@@ -5,8 +5,8 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-import {user} from "./model";
-import {hasAddress, isAdult} from "./helpers";
+import {user} from "./user.data";
+import {hasAddress, isAdult} from "./user.validators";
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
 console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
