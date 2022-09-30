@@ -8,33 +8,14 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  #energySupply = 100;
-
-  public consume(energy: number) {
-    if (this.#energySupply >= energy) {
-      this.#energySupply -= energy;
-    } else {
-      throw new Error("Not enough power");
-    }
-  }
-
-  showPowerSupply() {
-    return this.#energySupply;
-  }
-}
-
-class LightBulb {
-  protected readonly powerConsumption = 20;
-
-  connect(powerSource: PowerSource) {
-    powerSource.consume(this.powerConsumption);
-  }
-}
+import { LightBulb } from "./LightBulb";
+import { PowerSource } from "./PowerSupply";
 
 const powerSource = new PowerSource();
 
 const abazurek: Record<string, LightBulb> = {};
+
+console.log("----- ZADANIE 1 -----");
 
 Array.from({ length: 6 }).forEach((_, i) => {
   abazurek[`lightBulb${i + 1}`] = new LightBulb();
