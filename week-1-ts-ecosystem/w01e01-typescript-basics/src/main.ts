@@ -1,7 +1,8 @@
-import { hasAddress, hasGivenAge } from './common/validators';
-import { User } from './models/users';
+import { hasGivenAge } from './common/validators/has-given-age';
+import { hasAddress } from './common/validators/has-address';
+import { User } from './models/users/user';
 
-export const user: User = {
+const user: User = {
   name: 'Andy',
   age: 30,
   email: 'andy@mail-me-tomorrow.com',
