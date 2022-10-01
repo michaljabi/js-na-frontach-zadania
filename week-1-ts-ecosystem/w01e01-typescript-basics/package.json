@@ -1,5 +1,16 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "main": "main.js",
+  "scripts": {
+    "start": "parcel index.html watch"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "2.7.1",
+    "typescript": "^4.8.4"
+  }
 }
