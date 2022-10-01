@@ -2,9 +2,11 @@ type HtmlTagName = 'p' | 'div' | 'section' | 'article';
 
 function createElement<TagName extends  HtmlTagName>(tagName: TagName, className: string = ''){
   const element = document.createElement(tagName)
+
   if (className.length) {
     element.className = className
   }
+
   return element
 }
 

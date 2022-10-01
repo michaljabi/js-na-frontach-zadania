@@ -21,6 +21,8 @@ const items: Item[] = [
 export function root(): HTMLDivElement {
   const $hero: HTMLElement = hero({ title: 'Shopping App', subTitle: 'buy and sell' })
   const $container: HTMLDivElement = div('container')
+
   $container.append($hero, cartPanel({ items }))
+
   return $container
 }
