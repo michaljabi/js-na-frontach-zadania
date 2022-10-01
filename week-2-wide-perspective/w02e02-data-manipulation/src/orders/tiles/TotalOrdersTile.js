@@ -1,6 +1,13 @@
-const componentId = 'total-orders'
-const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const content = mountPoint.querySelector('[data-content]')
+import { getOrders } from "../../orders.utils";
 
-// Ta wartość powinna być wykalkulowana na podstawie kolekcji ordersFakeData
-content.innerHTML = '15'
+const componentId = "total-orders";
+const mountPoint = document.querySelector(`[data-tile="${componentId}"]`);
+const content = mountPoint.querySelector("[data-content]");
+
+let orders;
+window.addEventListener("load", async () => {
+  orders = await getOrders();
+
+  // Ta wartość powinna być wykalkulowana na podstawie kolekcji ordersFakeData
+  content.innerHTML = orders.length;
+});

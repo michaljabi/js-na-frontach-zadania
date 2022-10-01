@@ -1,6 +1,22 @@
-const componentId = 'best-sale'
-const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const content = mountPoint.querySelector('[data-content]')
+import { getOrders } from "../../orders.utils";
 
-// Ta wartość powinna pochodzić z kolekcji ordersFakeData
-content.innerHTML = '5522.0'
+const componentId = "best-sale";
+const mountPoint = document.querySelector(`[data-tile="${componentId}"]`);
+const content = mountPoint.querySelector("[data-content]");
+
+let orders = [];
+
+window.addEventListener("load", async () => {
+  orders = await getOrders();
+
+  const bestSale = orders.reduce((sale, order) => {
+    if (sale < order.sale) {
+      sale = order.sale;
+    }
+
+    return sale;
+  }, 0);
+
+  // Ta wartość powinna pochodzić z kolekcji ordersFakeData
+  content.innerHTML = bestSale;
+});

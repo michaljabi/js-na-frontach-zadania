@@ -1,25 +1,41 @@
-const componentId = 'annual-orders'
-const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const subTitle = mountPoint.querySelector('[data-subtitle]')
-const panel = mountPoint.querySelector('[data-panel]')
+import { getOrders } from "../../orders.utils";
 
-// Uważaj na odfiltrowanie wg. roku (2022)
-subTitle.textContent = 'Year 2022'
-panel.innerHTML = ''
+const componentId = "annual-orders";
+const mountPoint = document.querySelector(`[data-tile="${componentId}"]`);
+const subTitle = mountPoint.querySelector("[data-subtitle]");
+const panel = mountPoint.querySelector("[data-panel]");
 
-// Tutaj podobnie, powinniśmy interpretować dane z: ordersFakeData
-for (const orderDate of [
-  '2022-10-06T15:03:25.132Z',
-  '2022-10-16T17:43:26.300Z',
-  '2022-11-07T02:37:43.525Z',
-]) {
-  panel.appendChild(makeLiElement({ orderDate, orderNumber: '02/2022' }))
+let orders;
+window.addEventListener("load", async () => {
+  orders = await getOrders();
+
+  // Uważaj na odfiltrowanie wg. roku (2022)
+  subTitle.textContent = "Year 2022";
+  panel.innerHTML = "";
+
+  // Tutaj podobnie, powinniśmy interpretować dane z: ordersFakeData
+  const filteredOrders = getOrdersByYear(orders, 2022);
+
+  for (const { orderDate, orderNumber } of filteredOrders) {
+    panel.appendChild(makeLiElement({ orderDate, orderNumber }));
+  }
+});
+
+function getOrdersByYear(orders, year) {
+  return orders.filter((order) => {
+    const date = new Date(order.orderDate);
+    const orderYear = date.getFullYear();
+
+    return orderYear === year;
+  });
 }
 
 function makeLiElement({ orderDate, orderNumber }) {
-  const li = document.createElement('li')
-  li.className = 'panel-block'
+  const li = document.createElement("li");
+  li.className = "panel-block";
   // Dodaj jakieś ładne formatowanie daty!
-  li.innerText = `${orderNumber} | ${orderDate}`
-  return li
+  li.innerText = `${orderNumber} | ${new Intl.DateTimeFormat("pl-PL").format(
+    new Date(orderDate)
+  )}`;
+  return li;
 }
