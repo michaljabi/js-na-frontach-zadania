@@ -1,5 +1,6 @@
 import { User } from "./models/User";
 import * as utils from "./utils/utils";
+import { displayTextOnPage } from "./utils/dom-utils";
 
 const user: User = {
   name: "Andy",
@@ -13,5 +14,4 @@ const user: User = {
 
 const isAdult = utils.hasGivenAge(18);
 
-console.log(`User ${user.name} is ${isAdult(user) ? "adult" : "minor"}`);
-console.log(`and has${utils.hasAddress(user) ? "" : " no"} address`);
+displayTextOnPage(utils.prepareText(user, isAdult), ".container");
