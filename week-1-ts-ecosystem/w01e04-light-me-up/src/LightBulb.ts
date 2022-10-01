@@ -8,13 +8,12 @@ export class LightBulb {
   constructor(private powerSource: PowerSource, private ErrorHandler: ErrorHandler) {}
 
   light() {
-    console.log('light request');
     try {
       this.powerSource.consume(this.powerConsumption);
     } catch (e) {
       console.error(e);
-      if (typeof e === 'string') {
-        this.ErrorHandler.print(e);
+      if (e instanceof Error && typeof e.message === 'string') {
+        this.ErrorHandler.print(e.message);
       }
     }
   }

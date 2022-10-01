@@ -3,9 +3,8 @@ export class PowerSource {
 
   consume(energy: number) {
     if (this.energySupply < energy) {
-      throw "You don't have enough energy supply";
+      throw new Error("You don't have enough energy supply");
     } else {
-      console.log('consuming energy');
       this.energySupply -= energy;
     }
   }
