@@ -1,11 +1,5 @@
 export const getOrders = async () => {
-  if (window.orders) {
-    return window.orders;
-  }
-
   let orders = await fetchOrders();
-
-  window.orders = orders;
 
   return orders;
 };
