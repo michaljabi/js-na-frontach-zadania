@@ -14,7 +14,7 @@ export class LightBulb {
     this.#powerSource.consume(this.powerConsumption);
   }
 
-  async light(seconds: number) {
+  light(seconds: number) {
     let secondsLeft = seconds;
     let energyConsumed = 0;
     const interval = setInterval(() => {
