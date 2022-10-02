@@ -1,21 +1,46 @@
-/**
- * W zasadzie tutaj możesz modyfikować wszystko poza wartościami:
- *
- * - 100 w przypadku PowerSource.
- * - 20 w przypadku LightBulb.
- *
- * Pamiętaj `PowerSource` ma nie wiedzieć — kto z niego korzysta!
- * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
- * */
+import { PowerSource } from './powerSource';
+import { LightBulb } from './lightBulb';
 
-class PowerSource {
-  private energySupply = 100
+const powerSource = new PowerSource();
 
-  consume(energy) {
-    this.energySupply -= energy
+const first = () => {
+  console.log('-----------');
+  console.log('FIRST TASK');
+
+  const bulb1 = new LightBulb(powerSource);
+  const bulb2 = new LightBulb(powerSource);
+  const bulb3 = new LightBulb(powerSource);
+  const bulb4 = new LightBulb(powerSource);
+  const bulb5 = new LightBulb(powerSource);
+  const bulb6 = new LightBulb(powerSource);
+
+  try {
+    bulb1.lumos();
+    bulb2.lumos();
+    bulb3.lumos();
+    bulb4.lumos();
+    bulb5.lumos();
+    bulb6.lumos();
+  } catch (error) {
+    powerSource.resetGenerator();
+    console.error(error);
   }
-}
+  console.log('powerSource', powerSource);
+};
 
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+const second = () => {
+  console.log('-----------');
+  console.log('SECOND TASK');
+
+  const bulb1 = new LightBulb(powerSource);
+  try {
+    bulb1.switchForFewSeconds(7);
+  } catch (error) {
+    powerSource.resetGenerator();
+    console.error(error);
+  }
+  console.log('powerSource', powerSource);
+};
+
+first();
+second();
