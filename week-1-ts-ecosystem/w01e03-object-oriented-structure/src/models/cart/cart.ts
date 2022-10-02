@@ -1,18 +1,17 @@
-import {ProductType} from '../product/product.types';
-import {Product} from '../product/product';
+import {BaseProduct} from '../product/product';
 
-export class Cart<Type extends ProductType> {
-  #products: Product<Type>[] = [];
+export class Cart<Product extends BaseProduct> {
+  #products: Product[] = [];
 
   get items() {
     return this.#products;
   }
 
-  set items(products: Product<Type>[]) {
+  set items(products: Product[]) {
     this.#products = products;
   }
 
-  addProduct(product: Product<Type>) {
+  addProduct(product: Product) {
     const existingProduct = this.getProduct(product.id);
     if(existingProduct) {
       return this.updateProduct(existingProduct.id, {quantity: existingProduct.quantity + product.quantity})
@@ -24,7 +23,7 @@ export class Cart<Type extends ProductType> {
     return this.#products.find((product) => product.id === id);
   }
 
-  updateProduct(id: string, updatedProduct: Partial<Omit<Product<Type>, "id">>) {
+  updateProduct(id: string, updatedProduct: Partial<Omit<BaseProduct, "id">>) {
     const index = this.#products.findIndex((product) => product.id === id);
     if(index === -1) throw new Error("Not found");
     this.#products[index] = {...this.#products[index], ...updatedProduct}

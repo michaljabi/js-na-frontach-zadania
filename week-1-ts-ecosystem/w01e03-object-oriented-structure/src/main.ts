@@ -1,7 +1,8 @@
 import {Cart} from './models/cart/cart';
+import {AuctionProduct, BuyNowProduct, FreeProduct} from './models/product/product';
 
 console.log("-- BUY NOW CART -- ");
-const buyNowCart = new Cart<"BUY NOW">();
+const buyNowCart = new Cart<BuyNowProduct>();
 buyNowCart.addProduct({id: "1", name: "test", price: 12, quantity: 1, type: "BUY NOW"});
 console.log(buyNowCart.items);
 buyNowCart.addProduct({id: "1", name: "test", price: 12, quantity: 1, type: "BUY NOW"});
@@ -12,7 +13,7 @@ console.log(`Total price sum: ${buyNowCart.getTotalPriceSum()}`)
 
 
 console.log("-- AUCTION CART -- ");
-const auctionCart = new Cart<"AUCTION">();
+const auctionCart = new Cart<AuctionProduct>();
 auctionCart.addProduct({id: "1", name: "test", price: 12, quantity: 1, type: "AUCTION"});
 console.log(auctionCart.items);
 auctionCart.addProduct({id: "1", name: "test", price: 12, quantity: 1, type: "AUCTION"});
@@ -30,7 +31,7 @@ console.log(`Total price sum: ${auctionCart.getTotalPriceSum()}`)
 
 
 console.log("-- FREE CART -- ");
-const freeCart = new Cart<"FREE">();
+const freeCart = new Cart<FreeProduct>();
 freeCart.addProduct({id: "1", name: "test", quantity: 1, type: "FREE"});
 console.log(freeCart.items);
 freeCart.addProduct({id: "1", name: "test", quantity: 1, type: "FREE"});
