@@ -16,7 +16,7 @@ Chcesz udowodnić, że (bez zmiany powyższych wartości) źródło może zapali
 ---
 
 Główne problemy projektu:
-
+ 
 - projekt napisany w jednym pliku.
 - mamy tylko przygotowane zarysy klas i poprawne _wartości_ danych
 - jak udowodnić rozwiązanie w czasie `5s` ?
