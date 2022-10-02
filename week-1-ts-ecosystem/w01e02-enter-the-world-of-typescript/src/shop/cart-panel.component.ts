@@ -3,7 +3,7 @@ import { Currency, Item } from '../models/cart-models';
 import { cartItemSum } from './cart-item-sum.component';
 import { cartItem } from './cart-item.component';
 
-export function cartPanel({ heading = 'Cart Items', items }: { heading: string; items: Item[] }): HTMLElement {
+export function cartPanel({ items, heading = 'Cart Items' }: { items: Item[]; heading?: string }): HTMLElement {
   const $article: HTMLElement = article('panel is-primary my-6 w-75 mx-auto');
   const $heading: HTMLParagraphElement = p('panel-heading');
   $heading.textContent = heading;
