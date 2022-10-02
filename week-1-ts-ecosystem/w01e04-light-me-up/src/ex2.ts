@@ -14,4 +14,13 @@ const powerSource = new PowerSource();
 
 const lightBulb1 = new LightBulb(powerSource);
 
-lightBulb1.lightUpFor(6);
+const handleOnError = (e) => {
+  console.error("Say goodbye to your light. There's no more power", e);
+};
+
+try {
+  lightBulb1.lightUpFor(6, handleOnError);
+} catch (e) {
+  console.error("There is an error: ");
+  console.log(e);
+}

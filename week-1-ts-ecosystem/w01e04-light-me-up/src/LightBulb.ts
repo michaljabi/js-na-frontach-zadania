@@ -13,10 +13,23 @@ export class LightBulb {
     console.log("Lighting...");
   }
 
-  lightUpFor(seconds) {
+  lightUpFor(seconds: number, onError?: (e: Error) => void) {
     for (let sec = 0; sec < seconds; sec++) {
       setTimeout(() => {
-        this.lightUp();
+        try {
+          this.lightUp();
+        } catch (e: unknown) {
+          if (e instanceof Error) {
+            if (onError) {
+              return onError(e);
+            }
+
+            console.error("An error occurred:");
+            console.log(e);
+          } else {
+            console.error("Unknown exception");
+          }
+        }
       }, 1000 * sec);
     }
   }
