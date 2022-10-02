@@ -1,6 +1,11 @@
 {
   "name": "w02e01-functional-warm-up",
   "version": "1.0.0",
-  "dependencies": {},
-  "type": "module"
+  "scripts": {
+    "start": "nodemon src/main.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  }
 }
