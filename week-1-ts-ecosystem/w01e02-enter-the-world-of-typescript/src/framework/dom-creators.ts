@@ -1,7 +1,4 @@
-function createElement<K extends keyof HTMLElementTagNameMap>(
-  tagName: K = "div" as K,
-  className: string = ""
-): HTMLElementTagNameMap[K] {
+function createElement<K extends keyof HTMLElementTagNameMap>(tagName: K = 'div' as K, className: string = ''): HTMLElementTagNameMap[K] {
   const element = document.createElement(tagName);
   if (className.length) {
     element.className = className;
@@ -9,7 +6,7 @@ function createElement<K extends keyof HTMLElementTagNameMap>(
   return element;
 }
 
-export const p = (className = "") => createElement("p", className);
-export const div = (className = "") => createElement("div", className);
-export const section = (className = "") => createElement("section", className);
-export const article = (className = "") => createElement("article", className);
+export const p = (className = '') => createElement('p', className);
+export const div = (className = '') => createElement('div', className);
+export const section = (className = '') => createElement('section', className);
+export const article = (className = '') => createElement('article', className);
