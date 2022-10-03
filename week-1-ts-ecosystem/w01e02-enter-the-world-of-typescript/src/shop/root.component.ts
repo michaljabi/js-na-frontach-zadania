@@ -1,11 +1,11 @@
 import { div } from '../framework/dom-creators'
-import { item } from '../interfaces/item.interface'
+import { Item } from '../interfaces/item.interface'
 import { cartPanel } from './cart-panel.component'
 import { hero } from './hero.component'
 
 
 
-const items: item[] = [
+const items: Item[] = [
   {
     name: 'Tomatoes',
     amount: 2,

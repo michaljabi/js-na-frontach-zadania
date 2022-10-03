@@ -1,8 +1,8 @@
-import { price } from "./price.interface";
+import { Price } from "./price.interface";
 
-export interface item {
+export interface Item {
     name: string;
     amount: number;
     unit: 'kg' | 'lbs';
-    price:price
+    price:Price
   }

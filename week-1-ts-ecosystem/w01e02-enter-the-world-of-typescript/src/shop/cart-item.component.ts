@@ -1,7 +1,7 @@
 import { div } from "../framework/dom-creators";
-import { item } from "../interfaces/item.interface";
+import { Item } from "../interfaces/item.interface";
 
-export function cartItem({ name, amount, unit, price }: item) {
+export function cartItem({ name, amount, unit, price }: Item) {
   const $panelBlock: HTMLDivElement = div("panel-block");
   const $name: HTMLDivElement = div();
   $name.textContent = name;

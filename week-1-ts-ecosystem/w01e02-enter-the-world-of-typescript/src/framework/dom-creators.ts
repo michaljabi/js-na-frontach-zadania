@@ -1,8 +1,11 @@
-function createElement(
-  tagName: string = "div",
+
+type TagName  = "div" | "section" | "p" | "article"
+
+function createElement<T extends TagName>(
+  tagName:T ,
   className: string = ""
-): HTMLElement {
-  const element: HTMLElement = document.createElement(tagName);
+): HTMLElementTagNameMap[T] {
+  const element = document.createElement(tagName);
   if (className.length) {
     element.className = className;
   }
