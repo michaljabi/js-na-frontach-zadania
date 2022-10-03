@@ -6,7 +6,7 @@
  *
  * */
 
-import { User } from './interfaces';
+import { User } from './user.interface';
 import { hasAddress, isAdult } from './utils';
 
 const user: User = {
