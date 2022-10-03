@@ -92,15 +92,5 @@ export const randomAlbumData = {
   ],
 };
 
-const tracks = randomAlbumData.tracks;
-// fidn the shortest track
-const shortestTrack = tracks.reduce((acc, track) => {
-  if (parseInt(acc.duration) < parseInt(track.duration)) {
-    return acc;
-  } else {
-    return track;
-  }
-});
-
 // Data Source:
 // https://api.deezer.com
