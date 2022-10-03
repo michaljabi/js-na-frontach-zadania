@@ -6,16 +6,8 @@
  *
  * */
 
-interface Address {
-  street: string;
-  no: number;
-}
-interface User {
-  name: string;
-  email: string;
-  age: number;
-  address?: Address;
-}
+import { User } from './interfaces';
+import { hasAddress, isAdult } from './utils';
 
 const user: User = {
   name: 'Andy',
@@ -26,16 +18,6 @@ const user: User = {
     no: 23,
   },
 };
-
-const hasAddress = (user: User): boolean => {
-  return Boolean(user.address);
-};
-
-const hasGivenAge = (requiredAge: number): ((user: User) => boolean) => {
-  return (user: User): boolean => user.age >= requiredAge;
-};
-
-const isAdult = hasGivenAge(18);
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`);
 console.log(`and has${hasAddress(user) ? '' : ' no'} address`);
