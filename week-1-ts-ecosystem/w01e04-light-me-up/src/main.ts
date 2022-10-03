@@ -8,14 +8,12 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  private energySupply = 100
+import {task1} from "./task1";
+import {task2} from "./task2";
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
-
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+console.log("Task 1");
+task1();
+console.log("Task 2");
+(async () => {
+    await task2()
+})();
