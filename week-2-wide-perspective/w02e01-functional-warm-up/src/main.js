@@ -2,6 +2,7 @@ import { usersData } from './data-store/users.js'
 import { fruitsData } from './data-store/fruits.js'
 import { randomAlbumData } from './data-store/music-album.js'
 
+
 // Do wyliczenia danych poniżej użyj faktycznego źródła: randomAlbumData
 console.log(`-- Album Info -- 
 Name: ${'The name'}
