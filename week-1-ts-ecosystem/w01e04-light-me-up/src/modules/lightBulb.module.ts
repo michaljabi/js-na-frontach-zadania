@@ -1,5 +1,4 @@
 import { PowerSource } from "./powerSourceModule";
-const timer = () => new Promise((res) => setTimeout(res, 1000));
 
 export class LightBulb {
   protected readonly powerConsumption = 20;
@@ -11,14 +10,20 @@ export class LightBulb {
   async light(time: number = 1) {
     if (time) {
       for (let i = 0; i < time; i++) {
-        console.log("Took 20 Watts to light for 1 second");
-        try{
-            
-            this.powerSource.consume(this.powerConsumption);
-            await timer()
-        }catch {
-            console.warn("ERROR: Failed to light, not enough power  in energy source")
-        }
+        await new Promise<void>(async (resolve, reject) => {
+          console.log("Took 20 Watts to light for 1 second");
+           setTimeout(() => {
+            try {
+              this.powerSource.consume(this.powerConsumption);
+              resolve()
+            } catch(error) {
+              console.error(
+                "ERROR: Failed to light, not enough power in energy source"
+              );
+              reject(error);
+            }
+          },1000);
+        });
       }
     }
   }

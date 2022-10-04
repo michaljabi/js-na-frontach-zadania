@@ -6,7 +6,6 @@ export class PowerSource {
       throw new Error("Power source is depleted to zero");
     else {
         this.energySupply -= energy;
-        console.log(`${this.energySupply} J left in tank`)
-    }
   }
-}
+
+  }}
