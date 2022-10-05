@@ -1,4 +1,6 @@
 import { allAvailableOrders } from "../../context/fake.context.js"
+import { filterOrdersByYear } from "../../helpers/orders.helpers.js"
+
 const orders = allAvailableOrders
 const componentId = 'annual-orders'
 const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
@@ -10,17 +12,10 @@ const yearToFilter = 2022
 subTitle.textContent = `Year ${yearToFilter}`
 panel.innerHTML = ''
 
-const ordersfilteredByYear = (data, year) => {
-  const filteredOrders = data.filter(({ orderDate }) => {
-    const dateYear = new Date(orderDate).getFullYear()
-      return year == dateYear
-  })
-return filteredOrders
-  
-}
-const filteredOrdersByYear = ordersfilteredByYear(orders,2022)
+
+const ordersFilteredByYear = filterOrdersByYear(orders,2022)
 // Tutaj podobnie, powinniśmy interpretować dane z: ordersFakeData
-for (const { orderDate } of filteredOrdersByYear) {
+for (const { orderDate } of ordersFilteredByYear) {
   panel.appendChild(makeLiElement({ orderDate, orderNumber: '02/2022' }))
 }
 

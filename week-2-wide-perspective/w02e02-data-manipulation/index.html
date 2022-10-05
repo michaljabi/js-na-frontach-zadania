@@ -4,7 +4,12 @@
   <meta charset='UTF-8'>
   <title>Orders Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/axios@0.25.0/dist/axios.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/events@3.3.0/events.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/events@3.3.0/events.js"></script>
+  <!-- <script type="text/javascript" src="https://unpkg.com/node-uuid@1.4.8/uuid.js"></script> -->
+  
   <script type="module" src="src/main.js" defer></script>
   <style>
     [data-content] {
@@ -54,7 +59,7 @@
               </div>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent is-vertical">
             <article class="tile is-child notification" data-tile="total-income">
               <p class="title">Total income</p>
               <p class="subtitle">Sum of sales for all orders</p>
@@ -64,7 +69,11 @@
                 </div>
               </div>
             </article>
+            <article class="tile is-child notification" data-tile="total-orders">
+          <button class="button is-primary is-light is-large"  id="add-new-order-button"> Add New Order</button>
+            </article>
           </div>
+          
         </div>
         <div class="tile is-parent">
           <article class="tile is-child notification is-flex has-bg-mountains" data-tile="best-sale">
