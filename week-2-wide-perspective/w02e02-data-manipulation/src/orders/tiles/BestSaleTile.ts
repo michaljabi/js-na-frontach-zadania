@@ -6,7 +6,7 @@ const content = mountPoint && mountPoint.querySelector('[data-content]')
 
 
 
-export const  highestSoldOrder = (orderType: string[] ) => {
+export const  highestSoldOrder = (orderType: OrderType[] ) => {
     if(!content) return
-    content.innerHTML = orderType.sort((a,b) => Number(b)  - Number(a))[0]
+    content.innerHTML = orderType.sort((a,b) => Number(b.sale)  - Number(a.sale))[0].sale
 }

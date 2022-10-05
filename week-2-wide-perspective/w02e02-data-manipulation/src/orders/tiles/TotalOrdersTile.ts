@@ -1,6 +1,11 @@
 const componentId = 'total-orders'
 const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const content = mountPoint.querySelector('[data-content]')
+const content = mountPoint && mountPoint.querySelector('[data-content]')
 
 // Ta wartość powinna być wykalkulowana na podstawie kolekcji ordersFakeData
-content.innerHTML = '15'
+
+export  const totalOrdersLength = (ordersLength: number) => {
+    if(!content) return
+    content.innerHTML = String(ordersLength)
+}
+
