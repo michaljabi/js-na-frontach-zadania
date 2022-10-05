@@ -14,8 +14,6 @@ const getOrdersData = async () => {
     }
 
 }
-
-
 const showOrdersData = async () => {
     const ordersData = await getOrdersData()
     if(!ordersData) return
@@ -25,5 +23,6 @@ const showOrdersData = async () => {
     totalOrdersLength(ordersData.length)
 }
 
-
-showOrdersData().catch((error) => console.log("Error",error))
+showOrdersData().catch((error) =>  {
+    throw new Error(error)
+})
