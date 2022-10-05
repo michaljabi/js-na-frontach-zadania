@@ -1,5 +1,8 @@
 {
   "name": "w02e02-data-manipulation",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.27.2",
+    "json-server": "^0.4.2"
+  }
 }
