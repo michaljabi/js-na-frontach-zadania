@@ -6,8 +6,7 @@ const content = mountPoint && mountPoint.querySelector('[data-content]')
 
 
 
-export const  mostSaleOrder = (orderType: OrderType ) => {
-
+export const  highestSoldOrder = (orderType: string[] ) => {
+    if(!content) return
+    content.innerHTML = orderType.sort((a,b) => Number(b)  - Number(a))[0]
 }
-// Ta wartość powinna pochodzić z kolekcji ordersFakeData
-content.innerHTML = '5522.0'
