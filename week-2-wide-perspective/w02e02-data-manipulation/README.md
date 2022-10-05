@@ -13,7 +13,7 @@
 
 Posiadasz kolekcję danych zamówień. Należy odpowiednio zinterpretować te dane, tak by każdy `tile` wyświetlał właściwe informacje w naszym _Dashboard_. Zwróć uwagę, jakich informacji potrzeba uruchom: [index.html](index.html)
 
-Zależy nam na tym, aby dodatkowo symulować "dostarczenie" tych danych przez zapytanie `AJAX`. Muszą one jednak być w tej postaci co w [data-collection](src/orders/orders.fake-data.js). Sposób symulacji — zależy do Ciebie. Może być od prostego `Promise` aż po bardziej zaawansowane (faktyczne zapytania np. z `axios` + `json-server`) 
+Zależy nam na tym, aby dodatkowo symulować "dostarczenie" tych danych przez zapytanie `AJAX`. Muszą one jednak być w tej postaci co w [data-collection](src/orders/orders.fake-data.ts). Sposób symulacji — zależy do Ciebie. Może być od prostego `Promise` aż po bardziej zaawansowane (faktyczne zapytania np. z `axios` + `json-server`) 
 
 ---
 

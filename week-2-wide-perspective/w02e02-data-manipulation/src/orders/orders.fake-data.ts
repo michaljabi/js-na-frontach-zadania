@@ -1,4 +1,4 @@
-export const ordersFakeData = [
+ const orders = [
   {
     id: '1821c3aa-a51b-4ff2-8b3e-13db71ab2c5e',
     orderNumber: '01/2022',
@@ -90,3 +90,5 @@ export const ordersFakeData = [
     sale: 52.67,
   },
 ]
+
+ export default orders
