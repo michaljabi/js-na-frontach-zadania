@@ -13,7 +13,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
   ],
-  rules: {},
+  rules: {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "import/no-unresolved": "off"
+  },
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,

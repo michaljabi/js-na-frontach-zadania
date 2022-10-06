@@ -1,5 +1,5 @@
 node_modules/
 dist/
 .prettierrc.json
-.eslintrc.js
+.eslintrc.cjs
 env.d.ts

@@ -1,31 +1,23 @@
-import inquirer from 'inquirer';
+import { questionBuilder } from './questionBuilder.js';
+import { collectionQuestion, entryQuestion } from './questionData.js';
 
-// const response = await prompts({
-//   type: 'text',
-//   name: 'meaning',
-//   message: 'What is the meaning of life?',
-// });
+const entryResponse = await questionBuilder(entryQuestion.question, entryQuestion.name, entryQuestion.options);
 
-const response = await inquirer.prompt([
-  {
-    type: 'list',
-    message: 'Co chcesz zrobić?',
-    name: 'action',
-    choices: [
-      {
-        name: 'Wygenerować produkty',
-        value: 'create',
-      },
-      {
-        name: 'Usunąć produkty',
-        value: 'remove',
-      },
-      {
-        name: 'Kończymy',
-        value: 'quit',
-      },
-    ],
-  },
-]);
+if (entryResponse.action === 'delete') {
+  process.exit();
+}
 
-console.log(response);
+const collectionResponse = await questionBuilder(
+  collectionQuestion.question,
+  collectionQuestion.name,
+  collectionQuestion.options,
+);
+console.log(collectionResponse);
+
+if (entryResponse.action === 'add') {
+  // add
+} else if (entryResponse.action === 'generate') {
+  // generate
+} else if (entryResponse.action === 'delete') {
+  // delete
+}
