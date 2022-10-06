@@ -1,13 +1,14 @@
 import { Router } from 'express'
 import { fruitsRepository } from './fruits.repository.js'
+import {getPaginationParamas} from "../middleware.js"
 
 export const fruitsController = new Router()
 
 fruitsController.get('', (req, res) => {
-  const { skip, limit } = res.query
+  const { skip, limit } = getPaginationParamas(req.query)
   const fruits = fruitsRepository.find({
-    skip,
-    limit,
+    skip: skip ? skip: 0,
+    limit: limit ? limit: undefined,
   })
   res.json(fruits)
 })

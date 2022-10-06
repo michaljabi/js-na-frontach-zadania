@@ -15,3 +15,13 @@ export const paginationMiddleware = function (req, res, next) {
     }
     next()
     }
+
+
+export const getPaginationParamas = (query) => {
+    let skip, limit;
+    if(query) {
+        skip = query.skip
+        limit = query.limit
+    }
+    return {skip: Number(skip) ,limit: Number(limit)}
+}

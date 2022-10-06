@@ -1,14 +1,15 @@
 import { Router } from 'express'
 import { usersRepository } from './users.repository.js'
+import {getPaginationParamas} from "../middleware.js";
 
 export const usersController = new Router()
 
-usersController.get('', (req, res) => {
-  const { skip, limit } = res.query
 
+usersController.get('', (req, res) => {
+  const { skip, limit } = getPaginationParamas(req.query)
   const users = usersRepository.find({
-    skip,
-    limit,
+    skip: skip ? skip: 0,
+    limit: limit ? limit: undefined,
   })
   res.json(users)
 })
