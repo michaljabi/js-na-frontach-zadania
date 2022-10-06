@@ -1,5 +1,5 @@
-import { questionBuilder } from './questionBuilder.js';
-import { collectionQuestion, entryQuestion } from './questionData.js';
+import { collectionQuestion, entryQuestion } from './questionData';
+import { questionBuilder } from './questionBuilder';
 
 const entryResponse = await questionBuilder(entryQuestion.question, entryQuestion.name, entryQuestion.options);
 
