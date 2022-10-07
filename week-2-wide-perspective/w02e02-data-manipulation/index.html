@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.js"></script>
   <script type="text/javascript" src="https://unpkg.com/axios@0.25.0/dist/axios.min.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/events@3.3.0/events.js"></script>
-	<script type="text/javascript" src="https://unpkg.com/events@3.3.0/events.js"></script>
-  <!-- <script type="text/javascript" src="https://unpkg.com/node-uuid@1.4.8/uuid.js"></script> -->
+	<!-- <script type="text/javascript" src="https://unpkg.com/events@3.3.0/events.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/events@3.3.0/events.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.2.8/EventEmitter.min.js" integrity="sha512-AbgDRHOu/IQcXzZZ6WrOliwI8umwOgLE7sZgRAsNzmcOWlQA8RhXQzBx99Ho0jlGPWIPoT9pwk4kmeeR4qsV/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <script type="module" src="src/main.js" defer></script>
   <style>
@@ -86,7 +86,10 @@
           <div class="content">
             <p class="title">Annual Orders</p>
             <p class="subtitle" data-subtitle></p>
-            <ul class="panel" data-panel>
+            <ul class="panel" data-panel style="
+            max-height: 300px;
+            overflow: scroll;
+        ">
               <!-- Content -->
             </ul>
           </div>
