@@ -11,15 +11,10 @@ try {
     console.error(error);
 }
 
-function delay(time: number) {
-    return new Promise((resolve)=>setTimeout(resolve, time));
-}
-
 async function test(numberOfSeconds: number) {
-    lightBulb.addPowerSource(numberOfSeconds,powerSource);
+    lightBulb.addPowerSource(powerSource);
     for(let i = 0; i < numberOfSeconds; i++) {
-        lightBulb.gainEnergy();
-        await delay(1000);
-        lightBulb.drainEnergy();
+        await lightBulb.lightBulbUp();
     }
+    lightBulb.removePowerSource();
 }

@@ -4,7 +4,6 @@ export class LightBulb {
     protected readonly powerConsumption = 20
     private energyLevel = 0;
     private powerSource: PowerSource | undefined;
-    private numberOfSeconds = 0;
 
     get energyNeeded(){
         return this.powerConsumption - this.energyLevel;
@@ -15,29 +14,33 @@ export class LightBulb {
         console.log(`I've gained ${this.energyLevel}W`)
     }
 
-    addPowerSource(numberOfSeconds: number, powerSource: PowerSource){
-        this.numberOfSeconds = numberOfSeconds;
+    addPowerSource(powerSource: PowerSource){
         this.powerSource = powerSource;
     }
 
-    gainEnergy() {
+    async lightBulbUp() {
         try {
-            if (this.powerSource && this.numberOfSeconds > 0) {
+            if (this.powerSource) {
                 const energy = this.powerSource.consume(this.energyNeeded);
                 this.getEnergy(energy);
-                this.numberOfSeconds--;
-            }
-
-            if (this.numberOfSeconds === 0) {
-                this.powerSource = undefined;
+                await delay(1000);
+                this.drainEnergy();
             }
         } catch (error) {
             throw error;
         }
     }
 
-    drainEnergy() {
+    removePowerSource(){
+        this.powerSource = undefined;
+    }
+
+    private drainEnergy() {
         this.energyLevel = 0;
         console.log('energy drained');
     }
+}
+
+function delay(time: number) {
+    return new Promise((resolve)=>setTimeout(resolve, time));
 }
