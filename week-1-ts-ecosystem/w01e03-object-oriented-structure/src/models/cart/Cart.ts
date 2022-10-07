@@ -1,21 +1,22 @@
-import {IProduct, IProductWithPrice, Product, ProductWithPrice} from '../product';
+import { Product } from '../product/Product';
+import { ProductWithPrice } from '../product/ProductWithPrice';
 
-class Cart<ItemType extends Product> {
-  private _items: ItemType[] = [];
+class Cart<PRODUCT extends Product> {
+  private items: PRODUCT[] = [];
 
-  public get items(): ItemType[] {
-    return this._items;
+  public getItems(): PRODUCT[] {
+    return this.items;
   }
 
-  public getItem(id: string): ItemType | null {
-    return this._items.find(item => item.id == id) || null;
+  public getItem(id: string): PRODUCT | null {
+    return this.items.find((item) => item.id == id) || null;
   }
 
-  public addItem(item: ItemType): void {
+  public addItem(item: PRODUCT): void {
     const previousItem = this.getItem(item.id);
 
     if (previousItem) {
-      previousItem.amount += item.amount;
+      previousItem.amount += item.getAmount();
 
       return;
     }
@@ -27,25 +28,28 @@ class Cart<ItemType extends Product> {
     const previousItem = this.getItem(id);
 
     if (!previousItem) {
-      return console.log(`Warning: item with given ID not exists in cart`);
+      throw Error(`Product with id: ${id} not found`);
     }
 
-    if (previousItem.amount === 1) {
-      this._items = this.items.filter((item) => item.id !== id);
+    if (previousItem.getAmount() === 1) {
+      this.items = this.items.filter((item) => item.id !== id);
 
       return;
     }
 
-    previousItem.amount--;
+    previousItem.amount = previousItem.getAmount() - 1;
 
     return;
   }
 
-  public updateItem(id: string, data: Partial<IProductWithPrice>): void {
+  public updateItem(
+    id: string,
+    data: Partial<Pick<ProductWithPrice, 'name' | 'amount' | 'price'>>
+  ): void {
     const item = this.getItem(id);
 
     if (!item) {
-      return console.log(`Warning: item with given ID not exists in cart`);
+      throw Error(`Product with id: ${id} not found`);
     }
 
     item.update(data);
@@ -53,9 +57,13 @@ class Cart<ItemType extends Product> {
   }
 
   public getTotalPrice(): number {
-    return this.items.reduce((amount, item) => (
-        item instanceof ProductWithPrice ? amount + (item.price * item.amount) : amount
-    ), 0);
+    return this.items.reduce(
+      (amount, item) =>
+        item instanceof ProductWithPrice
+          ? amount + item.getPrice() * item.getAmount()
+          : amount,
+      0
+    );
   }
 
   public getNumberOfItems(): number {
@@ -63,4 +71,4 @@ class Cart<ItemType extends Product> {
   }
 }
 
-export {Cart};
+export { Cart };
