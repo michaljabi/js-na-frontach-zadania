@@ -1,5 +1,20 @@
 {
   "name": "w01e04-light-me-up",
+  "author": "Dariusz Gala",
   "version": "1.0.0",
-  "dependencies": {}
+  "scripts": {
+    "exercise": "ts-node --experimental-specifier-resolution=node --esm src/exercise${NO}.ts",
+    "exercise:1": "NO=1 npm run exercise",
+    "exercise:2": "NO=2 npm run exercise"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.39.0",
+    "@typescript-eslint/parser": "5.39.0",
+    "eslint": "8.24.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "prettier": "2.7.1",
+    "ts-node": "10.9.1"
+  },
+  "type": "module"
 }
