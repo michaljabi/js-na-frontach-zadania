@@ -2,16 +2,14 @@ import {PowerSource} from "./power-source";
 
 export class LightBulb {
     protected readonly powerConsumption = 20
-    private energyLevel = 0;
     private powerSource: PowerSource | undefined;
 
     get energyNeeded(){
-        return this.powerConsumption - this.energyLevel;
+        return this.powerConsumption;
     }
 
     getEnergy(energy: number){
-        this.energyLevel = energy;
-        console.log(`I've gained ${this.energyLevel}W`)
+        console.log(`I've gained ${energy}W`)
     }
 
     addPowerSource(powerSource: PowerSource){
@@ -21,7 +19,7 @@ export class LightBulb {
     async lightBulbUp() {
         try {
             if (this.powerSource) {
-                const energy = this.powerSource.consume(this.energyNeeded);
+                const energy = this.powerSource.consume(this.powerConsumption);
                 this.getEnergy(energy);
                 await delay(1000);
                 this.drainEnergy();
@@ -36,7 +34,6 @@ export class LightBulb {
     }
 
     private drainEnergy() {
-        this.energyLevel = 0;
         console.log('energy drained');
     }
 }
