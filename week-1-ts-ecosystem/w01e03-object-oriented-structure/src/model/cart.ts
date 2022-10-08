@@ -13,7 +13,9 @@ export class CartItem implements ICartItem {
         }
 
         update(count: number): void {
-            this.count = count;
+            if(count > 0) {
+                this.count = count;
+            }
         }
 }
 
