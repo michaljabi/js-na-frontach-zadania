@@ -3,4 +3,9 @@ const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
 const content = mountPoint.querySelector('[data-content]')
 
 // Ta wartość powinna pochodzić z kolekcji ordersFakeData
-content.innerHTML = '5522.0'
+fetch(`${import.meta.env.VITE_API}/orders`).then((response) => {
+    response.json().then((orders) => {
+        const bestSale = orders.reduce((acc, order) => acc.sale > order.sale ? acc : order);
+        content.innerHTML = parseFloat(bestSale.sale).toFixed(2);
+    });
+});
