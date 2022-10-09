@@ -1,4 +1,4 @@
-export const paginate = (model, skip) => {
+export const paginate = (model) => {
   return (req, res, next) => {
     const { skip, limit } = req.query;
     let computedSkip = 0;
