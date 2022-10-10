@@ -1,6 +1,6 @@
-type HtmlTags = "p" | "div" | "section" | "article";
+type Tags = "p" | "div" | "section" | "article"
 
-function createElement<T extends HtmlTags>(tagName: T, className = '') {
+function createElement<T extends Tags>(tagName: T, className = '') {
   const element = document.createElement(tagName)
   if (className.length) {
     element.className = className
