@@ -5,8 +5,8 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-import { user } from './data'
-import { hasAddress, isAdult } from './controller'
+import { user } from './User'
+import { hasAddress, isAdult } from './user.validators'
 
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
