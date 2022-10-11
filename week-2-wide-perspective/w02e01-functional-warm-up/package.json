@@ -1,6 +1,10 @@
 {
   "name": "w02e01-functional-warm-up",
   "version": "1.0.0",
+  "author": "Dariusz Gala",
   "dependencies": {},
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
   "type": "module"
 }
