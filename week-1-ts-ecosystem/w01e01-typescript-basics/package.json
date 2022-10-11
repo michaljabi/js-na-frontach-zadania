@@ -1,5 +1,8 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
