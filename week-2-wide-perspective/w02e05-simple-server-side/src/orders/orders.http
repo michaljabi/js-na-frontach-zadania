@@ -1,0 +1,13 @@
+### READ ORDERS
+GET http://localhost:4000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJFUzI1NiJ9.eyJsb2dpbiI6ImxvZ2luIiwiaWF0IjoxNjY1Nzc0OTg4LCJleHAiOjE2NjgzNjY5ODh9.OrJLMmcaQ3BZS_C7MtD1J2OGM70FSSLGKb2Bao91JA023Ot2_9iBVeHfpwVfBzhD7LWANDM_EjqpXdKJ3tZlVQ
+
+### CREATE ORDER
+POST http://localhost:4000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJFUzI1NiJ9.eyJsb2dpbiI6ImxvZ2luIiwiaWF0IjoxNjY1Nzc0OTg4LCJleHAiOjE2NjgzNjY5ODh9.OrJLMmcaQ3BZS_C7MtD1J2OGM70FSSLGKb2Bao91JA023Ot2_9iBVeHfpwVfBzhD7LWANDM_EjqpXdKJ3tZlVQ
+
+{
+  "products": ["287cd300-9d49-4399-93fe-a3f622822f4d", "94344d69-664e-4f34-af30-c309b14a1421"]
+}

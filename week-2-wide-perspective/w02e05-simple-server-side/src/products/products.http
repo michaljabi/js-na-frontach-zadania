@@ -1,0 +1,14 @@
+### Get products
+GET http://localhost:4000/products
+Content-Type: application/json
+Authorization: Bearer yJhbGciOiJFUzI1NiJ9.eyJsb2dpbiI6ImxvZ2luIiwiaWF0IjoxNjY1NTE2OTM4LCJleHAiOjE2NjgxMDg5Mzh9.mb2geTv3T8rmmYUXejHQGvQYZRuNXktW4G17fg77HQflHTYVgLdOy-vocPUeq5P0ETkZHrRdw85mC2TT7QPtfg
+
+### Create product
+POST http://localhost:4000/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJFUzI1NiJ9.eyJsb2dpbiI6ImxvZ2luIiwiaWF0IjoxNjY1NTE2OTM4LCJleHAiOjE2NjgxMDg5Mzh9.mb2geTv3T8rmmYUXejHQGvQYZRuNXktW4G17fg77HQflHTYVgLdOy-vocPUeq5P0ETkZHrRdw85mC2TT7QPtfg
+
+{
+  "name": "Mars",
+  "price": 1.35
+}
