@@ -5,19 +5,34 @@ import { randomAlbumData } from "./data-store/music-album.js";
 // Do wyliczenia danych poniżej użyj faktycznego źródła: randomAlbumData
 
 const length = randomAlbumData.tracks.length;
-const duration = randomAlbumData.tracks.reduce((prev, curr) => {
-  return prev + Number(curr.duration);
-}, 0);
 
-const determineTheObjectWithTheSmallestValue = (array, property) => {
-  return array.reduce((prev, curr) => {
-    if (property) {
-      return prev[property] < curr[property] ? prev : curr;
-    }
+const sumValueByProperty = (arr, property) => {
+  if (!Array.isArray(arr)) {
+    throw new Error("arr must be of the array type");
+  }
+  if (!Boolean(property)) {
+    throw new Error("Property is required");
+  }
+  return arr.reduce((prev, curr) => {
+    return prev + Number(curr[property]);
+  }, 0);
+};
+
+const duration = sumValueByProperty(randomAlbumData.tracks, "duration");
+
+const findSmallestValueByProperty = (arr, property) => {
+  if (!Array.isArray(arr)) {
+    throw new Error("arr must be of the array type");
+  }
+  if (!Boolean(property)) {
+    throw new Error("Property is required");
+  }
+  return arr.reduce((prev, curr) => {
+    return prev[property] < curr[property] ? prev : curr;
   });
 };
 
-const shortestTrack = determineTheObjectWithTheSmallestValue(randomAlbumData.tracks, "duration");
+const shortestTrack = findSmallestValueByProperty(randomAlbumData.tracks, "duration");
 
 console.log(`-- Album Info -- 
 Name: ${randomAlbumData.title}
