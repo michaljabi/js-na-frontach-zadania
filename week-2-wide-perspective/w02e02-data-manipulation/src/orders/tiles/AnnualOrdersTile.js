@@ -1,25 +1,27 @@
+import { getOrders } from '../../api/getOrders';
+
 const componentId = 'annual-orders'
 const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
 const subTitle = mountPoint.querySelector('[data-subtitle]')
 const panel = mountPoint.querySelector('[data-panel]')
 
-// Uważaj na odfiltrowanie wg. roku (2022)
+const orders = await getOrders()
+
+const mappedOrders = orders.map((order) => ({
+  orderDate: order.orderDate,
+  orderNumber: order.orderNumber
+})).filter((order) => new Date(order.orderDate).getFullYear() >=2022)
+
 subTitle.textContent = 'Year 2022'
 panel.innerHTML = ''
 
-// Tutaj podobnie, powinniśmy interpretować dane z: ordersFakeData
-for (const orderDate of [
-  '2022-10-06T15:03:25.132Z',
-  '2022-10-16T17:43:26.300Z',
-  '2022-11-07T02:37:43.525Z',
-]) {
-  panel.appendChild(makeLiElement({ orderDate, orderNumber: '02/2022' }))
+for (const order of mappedOrders) {
+  panel.appendChild(makeLiElement({ orderDate: order.orderDate, orderNumber: order.orderNumber }))
 }
 
 function makeLiElement({ orderDate, orderNumber }) {
   const li = document.createElement('li')
   li.className = 'panel-block'
-  // Dodaj jakieś ładne formatowanie daty!
-  li.innerText = `${orderNumber} | ${orderDate}`
+  li.innerText = `${orderNumber} | ${new Date(orderDate).toLocaleDateString()}`
   return li
 }
