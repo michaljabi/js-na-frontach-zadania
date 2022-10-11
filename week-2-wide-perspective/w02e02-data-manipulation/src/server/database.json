@@ -16,7 +16,7 @@
       "id": "3e749e59-74a5-4962-88fe-ddeefc7c8b9a",
       "orderNumber": "03/2022",
       "orderDate": "2021-10-16T17:43:26.300Z",
-      "sale": 300.0
+      "sale": 300
     },
     {
       "id": "59a15844-dc27-493e-9d5a-1900d61f8415",
@@ -58,7 +58,7 @@
       "id": "118a0c2f-d0fd-4bcb-8deb-f74d19b3fc94",
       "orderNumber": "10/2022",
       "orderDate": "2022-04-20T10:25:16.585Z",
-      "sale": 717.0
+      "sale": 717
     },
     {
       "id": "9bef8f0a-f506-4229-8499-0b4bae28de39",
@@ -70,7 +70,7 @@
       "id": "4980cdcf-a25f-4e7d-b47e-dce8e09dcc5a",
       "orderNumber": "12/2022",
       "orderDate": "2022-06-13T21:17:10.481Z",
-      "sale": 5522.0
+      "sale": 5522
     },
     {
       "id": "5939d47b-9369-4654-be12-cf34c7da5498",
@@ -89,6 +89,18 @@
       "orderNumber": "15/2022",
       "orderDate": "2022-07-22T11:55:55.436Z",
       "sale": 52.67
+    },
+    {
+      "id": "c728a3a9-a876-4bc5-882a-2bcd8c08ec2d",
+      "orderNumber": "16/2022",
+      "orderDate": "2022-10-11T17:17:05.841Z",
+      "sale": 962.47
+    },
+    {
+      "id": "6927b89f-2e3f-49a8-9989-014d726fc3b3",
+      "orderNumber": "17/2022",
+      "orderDate": "2022-10-11T17:17:07.175Z",
+      "sale": 210.35
     }
   ]
 }
