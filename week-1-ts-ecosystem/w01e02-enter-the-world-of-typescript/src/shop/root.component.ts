@@ -3,10 +3,10 @@ import { cartPanel } from './cart-panel.component'
 import { hero } from './hero.component'
 import { Item } from '../model/Item'
 
-const items: Array<Item> = [
+const items: Item[] = [
   {
     name: 'Tomatoes',
-    amount: 2.53,
+    amount: 2.5,
     unit: 'kg',
     price: { value: 20, currency: 'PLN' },
   },

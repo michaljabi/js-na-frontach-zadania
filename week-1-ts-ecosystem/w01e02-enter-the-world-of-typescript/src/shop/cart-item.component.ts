@@ -1,7 +1,7 @@
 import { div } from '../framework/dom-creators'
 import { Item } from '../model/Item'
 
-export function cartItem({ name, amount, unit, price }: Item) {
+export function cartItem({ name, amount, unit, price }: Item): HTMLDivElement {
   const $panelBlock = div('panel-block')
   const $name = div()
   $name.textContent = name

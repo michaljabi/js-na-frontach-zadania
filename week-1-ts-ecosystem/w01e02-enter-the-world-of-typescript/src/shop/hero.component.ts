@@ -1,7 +1,12 @@
 import { div, p, section } from '../framework/dom-creators'
-import { Hero } from '../model/Hero'
 
-export function hero({ title, subTitle }: Hero): HTMLElement {
+interface PropTypes {
+  title: string;
+  subTitle: string;
+}
+
+
+export function hero({ title, subTitle }: PropTypes): HTMLElement {
   const $heroSection = section('hero is-link')
   const $heroBody = div('hero-body')
   const $title = p('title')
