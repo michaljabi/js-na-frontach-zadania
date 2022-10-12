@@ -2,7 +2,7 @@
   "name": "w01e04-light-me-up",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon src/task-2.ts",
+    "dev": "nodemon src/task-1.ts",
     "build": "tsc"
   },
   "dependencies": {

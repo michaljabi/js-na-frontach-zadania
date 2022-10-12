@@ -8,40 +8,30 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  private energySupply = 100
+import { PowerSource } from './power-source';
 
-  consume(energy: number): void {
+class LightBulb {
+  public readonly powerConsumption = 20;
+
+  constructor(private source: PowerSource) {
+    this.lightUp();
+  }
+  private lightUp(): void {
     try {
-      if(this.energySupply >= energy) {
-        this.energySupply -= energy
-      } else {
-        throw new Error(`Not enough energy. Current energy supply: ${this.energySupply}. Your device requires: ${energy}`);
-      }
+      this.source.consume(this.powerConsumption);
     } catch (error) {
       console.error(error)
     }
   }
 }
 
-class LightBulb {
-  public readonly powerConsumption = 20
-}
-
 const source = new PowerSource();
 
-const LB1 = new LightBulb()
-const LB2 = new LightBulb()
-const LB3 = new LightBulb()
-const LB4 = new LightBulb()
-const LB5 = new LightBulb()
-const LB6 = new LightBulb()
-
-source.consume(LB1.powerConsumption);
-source.consume(LB2.powerConsumption);
-source.consume(LB3.powerConsumption);
-source.consume(LB4.powerConsumption);
-source.consume(LB5.powerConsumption);
-source.consume(LB6.powerConsumption);
+new LightBulb(source)
+new LightBulb(source)
+new LightBulb(source)
+new LightBulb(source)
+new LightBulb(source)
+new LightBulb(source)
 
 console.log(source);
