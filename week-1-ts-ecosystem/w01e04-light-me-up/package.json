@@ -3,13 +3,14 @@
   "author": "Dariusz Gala",
   "version": "1.0.0",
   "scripts": {
-    "exercise": "ts-node --experimental-specifier-resolution=node --esm src/exercise${NO}.ts",
-    "exercise:1": "NO=1 npm run exercise",
-    "exercise:2": "NO=2 npm run exercise"
+    "exercise": "ts-node --experimental-specifier-resolution=node --esm src/exercise${EX_NUMBER}.ts",
+    "exercise:1": "cross-env EX_NUMBER=1 npm run exercise",
+    "exercise:2": "cross-env EX_NUMBER=2 npm run exercise"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.39.0",
     "@typescript-eslint/parser": "5.39.0",
+    "cross-env": "7.0.3",
     "eslint": "8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",

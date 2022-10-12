@@ -4,11 +4,15 @@ class PowerSource {
   #energySupply = DEFAULT_POWER_SUPPLY;
 
   public consume(energy: number): void {
-    if (this.#energySupply <= 0) {
+    if (this.#energySupply - energy < 0) {
       throw Error('Source is out of power!');
     }
 
     this.#energySupply -= energy;
+  }
+
+  public getEnergySupply(): number {
+    return this.#energySupply;
   }
 }
 

@@ -13,6 +13,7 @@ class LightBulb {
 
   public flash(): void {
     this.#powerSource.consume(this.#powerConsumption);
+    console.log(`Power left: ${this.#powerSource.getEnergySupply()}`)
   }
 
   public switchOn(numberOfSeconds: number): Promise<void> {
