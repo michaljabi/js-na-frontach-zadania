@@ -1,12 +1,12 @@
-import { div } from '../framework/dom-creators.js'
-import { cartPanel } from './cart-panel.component.js'
-import { hero } from './hero.component.js'
+import { div } from '../framework/dom-creators'
+import { cartPanel } from './cart-panel.component'
+import { hero } from './hero.component'
 import { Item } from '../model/Item'
 
 const items: Array<Item> = [
   {
     name: 'Tomatoes',
-    amount: 2,
+    amount: 2.53,
     unit: 'kg',
     price: { value: 20, currency: 'PLN' },
   },

@@ -1,4 +1,4 @@
-import { div } from '../framework/dom-creators.js'
+import { div } from '../framework/dom-creators'
 import { Price } from '../model/Price'
 
 export function cartItemSum({ value, currency = 'PLN' }: Price): HTMLDivElement {

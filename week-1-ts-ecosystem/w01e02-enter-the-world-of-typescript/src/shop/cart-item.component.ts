@@ -1,4 +1,4 @@
-import { div } from '../framework/dom-creators.js'
+import { div } from '../framework/dom-creators'
 import { Item } from '../model/Item'
 
 export function cartItem({ name, amount, unit, price }: Item) {

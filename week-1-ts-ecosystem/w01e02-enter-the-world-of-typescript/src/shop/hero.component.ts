@@ -1,4 +1,4 @@
-import { div, p, section } from '../framework/dom-creators.js'
+import { div, p, section } from '../framework/dom-creators'
 import { Hero } from '../model/Hero'
 
 export function hero({ title, subTitle }: Hero): HTMLElement {
