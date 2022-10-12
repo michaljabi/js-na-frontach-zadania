@@ -10,4 +10,4 @@ app.use(express.json())
 
 app.use(mainController)
 app.use('/users', paginationMiddleware, usersController)
-app.use('/fruits', paginationMiddleware, fruitsController)
+app.use('/fruits', paginationMiddleware({ skipParamName: 'drop', limitParamName: 'max' }), fruitsController)

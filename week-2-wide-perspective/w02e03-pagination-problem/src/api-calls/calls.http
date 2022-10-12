@@ -1,8 +1,17 @@
+### Get all users
+GET http://localhost:3330/users
+
+### Get first 5 users
+GET http://localhost:3330/users?limit=5
+
+### Get next 10 users after skipping first 5
+GET http://localhost:3330/users?skip=5&limit=10
+
 ### Get all fruits
 GET http://localhost:3330/fruits
 
 ### Get first 5 fruits
-GET http://localhost:3330/fruits?limit=5
+GET http://localhost:3330/fruits?max=5
 
 ### Get next 10 fruits after skipping first 5
-GET http://localhost:3330/fruits?skip=5&limit=10
+GET http://localhost:3330/fruits?drop=5&max=10
