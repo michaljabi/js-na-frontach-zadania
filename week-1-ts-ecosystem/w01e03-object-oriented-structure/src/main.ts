@@ -10,7 +10,8 @@
  * - po prostu: wykaż, że przygotowana logika i modele danych — działają :)
  * */
 
-import { Cart, CartItem } from './model/cart';
+import { Cart } from './model/cart';
+import { CartItem } from './model/cart-item';
 
 // Dopisałem testy żeby nie śmiecić w głównym pliku i wypisywać console.logi :)
 // Uruchomienie testów => npm run test

@@ -1,23 +1,5 @@
-import { v4 } from 'uuid';
-import { CartType, Currency, ICartItem } from './cart.model';
-
-export class CartItem implements ICartItem {
-    id: string
-    constructor(
-        public name: string,
-        public count: number,
-        public price: number,
-        public currency: Currency,
-        public type: CartType) {
-            this.id = v4();
-        }
-
-        update(count: number): void {
-            if(count > 0) {
-                this.count = count;
-            }
-        }
-}
+import { CartItem } from './cart-item';
+import { CartType } from './cart.model';
 
 export class Cart {
     private items: Map<string, CartItem> = new Map();
