@@ -1,0 +1,8 @@
+### Get all fruits
+GET http://localhost:3330/fruits
+
+### Get first 5 fruits
+GET http://localhost:3330/fruits?limit=5
+
+### Get next 10 fruits after skipping first 5
+GET http://localhost:3330/fruits?skip=5&limit=10

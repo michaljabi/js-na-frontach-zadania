@@ -4,18 +4,9 @@ import { fruitsRepository } from './fruits.repository.js'
 export const fruitsController = new Router()
 
 fruitsController.get('', (req, res) => {
-  const { skip, limit } = req.query
-  let computedSkip = 0
-  if (skip) {
-    computedSkip = Number(skip)
-  }
-  let computedLimit
-  if (limit) {
-    computedLimit = Number(limit)
-  }
   const fruits = fruitsRepository.find({
-    skip: computedSkip,
-    limit: computedLimit,
+    skip: req.pagination.skip,
+    limit: req.pagination.limit,
   })
   res.json(fruits)
 })
