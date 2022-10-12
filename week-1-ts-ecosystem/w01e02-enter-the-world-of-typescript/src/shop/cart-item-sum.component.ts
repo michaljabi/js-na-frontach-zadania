@@ -1,6 +1,6 @@
 import { div } from '../framework';
 
-type PropsType = {
+type Props = {
   value: number;
   currency?: string;
 };
@@ -8,7 +8,7 @@ type PropsType = {
 export function cartItemSum({
   value,
   currency = 'PLN',
-}: PropsType): HTMLDivElement {
+}: Props): HTMLDivElement {
   const $panelBlock = div('panel-block is-justify-content-end');
 
   $panelBlock.innerHTML = `Total price: ${value} ${currency}`;

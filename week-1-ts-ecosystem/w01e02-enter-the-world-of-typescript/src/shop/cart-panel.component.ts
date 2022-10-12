@@ -1,17 +1,17 @@
 import { article, p } from '../framework';
 import { cartItemSum } from './cart-item-sum.component';
 import { cartItem } from './cart-item.component';
-import { ItemType } from '../types';
+import { Item } from '../model/item';
 
-type PropsType = {
+type Props = {
   heading?: string;
-  items: ItemType[];
+  items: Item[];
 };
 
 export function cartPanel({
   heading = 'Cart Items',
   items,
-}: PropsType): HTMLElement {
+}: Props): HTMLElement {
   const $article = article('panel is-primary my-6 w-75 mx-auto');
   const $heading = p('panel-heading');
 

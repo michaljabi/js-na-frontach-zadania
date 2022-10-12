@@ -1,12 +1,12 @@
 import { div } from '../framework';
-import { ItemType } from '../types';
+import { Item } from '../model/item';
 
 export function cartItem({
   name,
   amount,
   unit,
   price,
-}: ItemType): HTMLDivElement {
+}: Item): HTMLDivElement {
   const $panelBlock = div('panel-block');
   const $name = div();
   $name.textContent = name;

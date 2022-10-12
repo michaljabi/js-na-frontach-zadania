@@ -1,9 +1,9 @@
 import { div } from '../framework';
 import { cartPanel } from './cart-panel.component';
 import { hero } from './hero.component';
-import { ItemType } from '../types';
+import { Item } from '../model/item';
 
-const items: ItemType[] = [
+const items: Item[] = [
   {
     name: 'Tomatoes',
     amount: 2,

@@ -1,11 +1,11 @@
 import { div, p, section } from '../framework';
 
-type PropsType = {
+type Props = {
   title: string;
   subTitle: string;
 };
 
-export function hero({ title, subTitle }: PropsType): HTMLElement {
+export function hero({ title, subTitle }: Props): HTMLElement {
   const $heroSection = section('hero is-link');
   const $heroBody = div('hero-body');
   const $title = p('title');
