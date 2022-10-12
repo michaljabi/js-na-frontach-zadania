@@ -1,6 +1,16 @@
 {
   "name": "w02e01-functional-warm-up",
   "version": "1.0.0",
-  "dependencies": {},
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "prettier:fix": "prettier --write src/**/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
 }
