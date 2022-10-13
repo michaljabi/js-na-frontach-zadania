@@ -1,10 +1,9 @@
-import { getOrders } from '../../api/getOrders';
+export const TotalOrdersTile = (ordersService) => {
+  const componentId = 'total-orders'
+  const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
+  const content = mountPoint.querySelector('[data-content]')
 
-const componentId = 'total-orders'
-const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const content = mountPoint.querySelector('[data-content]')
-
-const orders = await getOrders()
-
-// Ta wartość powinna być wykalkulowana na podstawie kolekcji ordersFakeData
-content.innerHTML = orders.length
+  ordersService.getOrders().subscribe((order) => {
+    content.innerHTML = order.length
+  })
+}

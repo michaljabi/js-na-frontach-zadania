@@ -1,10 +1,9 @@
-import { getOrders } from '../../api/getOrders';
+export const BestSaleTile = (ordersService) => {
+  const componentId = 'best-sale'
+  const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
+  const content = mountPoint.querySelector('[data-content]')
 
-const componentId = 'best-sale'
-const mountPoint = document.querySelector(`[data-tile="${componentId}"]`)
-const content = mountPoint.querySelector('[data-content]')
-
-const orders = await getOrders()
-
-// Ta wartość powinna pochodzić z kolekcji ordersFakeData
-content.innerHTML = String(Math.max(...orders.map((order) => order.sale)))
+  ordersService.getOrders().subscribe((order) => {
+    content.innerHTML = String(Math.max(...order.map((order) => order.sale)))
+  })
+}
