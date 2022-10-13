@@ -1,11 +1,11 @@
-import { IPrice, IProduct, ProductType } from './types';
+import { Price, ProductType } from './types';
 
-export class Product implements IProduct {
+export class Product {
   constructor(
     public type: ProductType,
     public id: string,
     public name: string,
     public quantity: number,
-    public price?: IPrice,
+    public price?: Price,
   ) {}
 }

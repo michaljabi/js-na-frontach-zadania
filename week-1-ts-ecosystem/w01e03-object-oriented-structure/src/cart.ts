@@ -1,15 +1,14 @@
-import { ICart, IProduct, ProductType } from './types';
+import {  ProductType } from './types';
+import { Product } from './product';
 
-export class Cart implements ICart {
-  private products: IProduct[] = [];
+export class Cart {
+  private products: Product[] = [];
 
   constructor(private cartType: ProductType) {}
 
-  addProduct = (newProduct: IProduct): void => {
+  addProduct = (newProduct: Product): void => {
     if (newProduct.type === this.cartType) {
       this.products.push(newProduct);
-    } else {
-      throw 'Product type is not compatible with the cart type';
     }
   };
 
@@ -17,7 +16,7 @@ export class Cart implements ICart {
     this.products = this.products.filter((product) => product.id !== id);
   }
 
-  getAllProducts(): IProduct[] {
+  getAllProducts(): readonly Product[] {
     return this.products;
   }
 
@@ -25,7 +24,7 @@ export class Cart implements ICart {
     return this.products.reduce((acc, curr) => acc + curr.quantity, 0);
   }
 
-  getProductById(id: string): IProduct | undefined {
+  getProductById(id: string): Product | undefined {
     return this.products.find((product) => product.id === id);
   }
 
@@ -33,7 +32,7 @@ export class Cart implements ICart {
     return this.products.reduce((acc, curr) => acc + curr.quantity * (curr.price?.value ?? 0), 0);
   }
 
-  updateProductById(id: string, productUpdated: Partial<IProduct>): void {
+  updateProductById(id: string, productUpdated: Partial<Product>): void {
     this.products = this.products.map((product) => {
       if (product.id === id) {
         product = {
