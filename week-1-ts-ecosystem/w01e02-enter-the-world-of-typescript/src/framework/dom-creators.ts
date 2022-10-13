@@ -1,5 +1,5 @@
-function createElement(tagName = 'div', className = ''): HTMLDivElement | HTMLParagraphElement | HTMLElement {
-  const element = document.createElement(tagName);
+function createElement<T extends HTMLDivElement | HTMLParagraphElement | HTMLElement>(tagName = 'div', className = ''): T {
+  const element = <T>document.createElement(tagName);
   if (className.length) {
     element.className = className;
   }
