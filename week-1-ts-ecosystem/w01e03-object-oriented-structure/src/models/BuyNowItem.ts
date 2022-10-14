@@ -1,6 +1,6 @@
-import { ValuedItem } from "./ValuedItem";
+import { Item } from "./Item";
 
-export class BuyNowItem extends ValuedItem {
+export class BuyNowItem extends Item {
   value: number;
   currency: string;
   fastShopping: boolean;
@@ -10,7 +10,10 @@ export class BuyNowItem extends ValuedItem {
     this.currency = currency;
     this.fastShopping = true;
   }
+  get totalValue() {
+    return this.value * this.amount;
+  }
   print(): void {
-    console.log(`nazwa: ${this.name}, cena: ${this.value}, ilość: ${this.amount}, wartość: ${this.value * this.amount}`);
+    console.log(`nazwa: ${this.name}, cena: ${this.value}, ilość: ${this.amount}, wartość: ${this.totalValue}`);
   }
 }

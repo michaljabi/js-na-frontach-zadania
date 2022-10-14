@@ -1,6 +1,6 @@
-import { ValuedItem } from "./ValuedItem";
+import { Item } from "./Item";
 
-export class AuctionItem extends ValuedItem {
+export class AuctionItem extends Item {
   time: number;
   value: number;
   currency: string;
@@ -13,7 +13,10 @@ export class AuctionItem extends ValuedItem {
   getTimeEndAuction() {
     return new Date(this.time);
   }
+  get totalValue() {
+    return this.value * this.amount;
+  }
   print() {
-    console.log(`nazwa: ${this.name}, cena: ${this.value}, ilość: ${this.amount}, wartość: ${this.value * this.amount}`);
+    console.log(`nazwa: ${this.name}, cena: ${this.value}, ilość: ${this.amount}, wartość: ${this.totalValue}`);
   }
 }
