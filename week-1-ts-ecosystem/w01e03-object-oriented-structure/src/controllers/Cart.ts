@@ -1,9 +1,10 @@
 import { Item } from "../models/Item";
+import { ValuedItem } from "../models/ValuedItem";
 
-export class Cart<Product extends Item> {
-  private producs: Map<string, Product> = new Map();
+export class Cart<PRODUCT extends ValuedItem> {
+  private producs: Map<string, PRODUCT> = new Map();
 
-  add(product: Product) {
+  add(product: PRODUCT) {
     this.producs.set(product.id, product);
   }
 
@@ -11,9 +12,8 @@ export class Cart<Product extends Item> {
     return this.producs.get(id);
   }
 
-  updateById(id: string, product: Product) {
+  updateById(id: string, product: PRODUCT) {
     if (!!this.producs.get(id)) {
-      product.id = id;
       this.producs.set(id, product);
       return;
     }
