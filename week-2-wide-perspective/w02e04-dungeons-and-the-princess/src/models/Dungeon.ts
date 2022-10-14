@@ -1,12 +1,12 @@
 import { Underground } from './Underground';
-import { Person, PersonTitle } from './Person';
+import { Person, PERSON_TITLE } from './Person';
 import { PersonNotAllowedError } from './Error';
 
 class Dungeon {
   constructor(private readonly underground: Underground) {}
 
   enter(person: Person): void {
-    if (person.title === PersonTitle.queen) {
+    if (person.title === PERSON_TITLE.queen) {
       throw new PersonNotAllowedError({
         place: this,
         person

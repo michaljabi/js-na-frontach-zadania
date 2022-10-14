@@ -1,4 +1,4 @@
-enum PersonTitle {
+enum PERSON_TITLE {
   princess = 'princess',
   king = 'king',
   queen = 'queen',
@@ -9,7 +9,7 @@ enum PersonTitle {
 class Person {
   constructor(
     private readonly name: string,
-    public readonly title: PersonTitle
+    public readonly title: PERSON_TITLE
   ) {}
 
   shoutTheName(): void {
@@ -21,4 +21,4 @@ class Person {
   }
 }
 
-export { Person, PersonTitle };
+export { Person, PERSON_TITLE };

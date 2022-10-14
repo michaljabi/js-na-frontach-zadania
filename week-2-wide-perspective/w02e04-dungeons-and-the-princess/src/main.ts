@@ -8,20 +8,20 @@
 import { Underground } from './models/Underground';
 import { Dungeon } from './models/Dungeon';
 import { Castle } from './models/Castle';
-import { Person, PersonTitle } from './models/Person';
+import { Person, PERSON_TITLE } from './models/Person';
 
-const princess = new Person('Fiona', PersonTitle.princess);
+const princess = new Person('Fiona', PERSON_TITLE.princess);
 const hades = new Underground(princess);
 const cave = new Dungeon(hades);
 const kingdom = new Castle(cave);
 
 // Śmiałkowie:
-const knightJohn = new Person('John', PersonTitle.knight);
-const knightBrienne = new Person('Brienne', PersonTitle.knight);
-const kingFrancis = new Person('Francis', PersonTitle.king);
-const peasantMathew = new Person('Mathew', PersonTitle.peasant);
-const queenBianca = new Person('Bianca', PersonTitle.queen);
-const knightBruce = new Person('Bruce', PersonTitle.knight);
+const knightJohn = new Person('John', PERSON_TITLE.knight);
+const knightBrienne = new Person('Brienne', PERSON_TITLE.knight);
+const kingFrancis = new Person('Francis', PERSON_TITLE.king);
+const peasantMathew = new Person('Mathew', PERSON_TITLE.peasant);
+const queenBianca = new Person('Bianca', PERSON_TITLE.queen);
+const knightBruce = new Person('Bruce', PERSON_TITLE.knight);
 
 // Próba "odbicia" królewny z podziemi lochów:
 

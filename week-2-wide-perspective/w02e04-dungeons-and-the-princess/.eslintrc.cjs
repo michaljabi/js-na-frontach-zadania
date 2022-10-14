@@ -15,5 +15,6 @@ module.exports = {
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,
     "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-unused-vars": 1,
   }
 }

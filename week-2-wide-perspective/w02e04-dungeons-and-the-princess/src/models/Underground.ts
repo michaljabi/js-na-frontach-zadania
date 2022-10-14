@@ -1,4 +1,4 @@
-import { Person, PersonTitle } from './Person';
+import { Person, PERSON_TITLE } from './Person';
 import { InvalidSaviorError, PersonNotAllowedError } from './Error';
 
 class Underground {
@@ -8,7 +8,7 @@ class Underground {
   constructor(private readonly prisoner: Person) {}
 
   enter(person: Person): void {
-    if (person.title === PersonTitle.king) {
+    if (person.title === PERSON_TITLE.king) {
       throw new PersonNotAllowedError({
         place: this,
         person
@@ -20,7 +20,7 @@ class Underground {
   }
 
   private saveThePrisoner(person: Person): void {
-    if (person.title !== PersonTitle.knight) {
+    if (person.title !== PERSON_TITLE.knight) {
       this.addBarricade();
       throw new InvalidSaviorError(person);
     } else {
