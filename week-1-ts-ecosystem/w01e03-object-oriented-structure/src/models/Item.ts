@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 export abstract class Item {
   id: string;
   abstract value?: number;
@@ -5,7 +6,7 @@ export abstract class Item {
   name: string;
   amount: number;
   constructor(name: string, amount: number) {
-    this.id = Math.round(Math.random() * Math.pow(10, 10)).toString(16);
+    this.id = uuidv4();
     this.name = name;
     this.amount = amount;
   }
