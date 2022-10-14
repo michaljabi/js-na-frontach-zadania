@@ -1,6 +1,6 @@
 import { ValuedItem } from "./ValuedItem";
 
-export class NowItem extends ValuedItem {
+export class BuyNowItem extends ValuedItem {
   value: number;
   currency: string;
   fastShopping: boolean;

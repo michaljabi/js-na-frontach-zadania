@@ -1,11 +1,11 @@
 import { Cart } from "./controllers/Cart";
 import { AuctionItem } from "./models/AuctionItem";
 import { FreeItem } from "./models/FreeItem";
-import { NowItem } from "./models/NowItem";
+import { BuyNowItem } from "./models/BuyNowItem";
 
-const nowItemCart = new Cart<NowItem>();
+const nowItemCart = new Cart<BuyNowItem>();
 
-const nowItem = new NowItem("Auto", 1, 230000);
+const nowItem = new BuyNowItem("Auto", 1, 230000);
 
 const freeItemCart = new Cart<FreeItem>();
 
