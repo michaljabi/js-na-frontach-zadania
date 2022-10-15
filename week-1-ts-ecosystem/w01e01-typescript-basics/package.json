@@ -1,5 +1,11 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "main": "main.js",
+  "scripts": {
+    "start": "tsc && node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
