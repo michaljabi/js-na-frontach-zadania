@@ -1,4 +1,4 @@
-import { User } from './interfaces';
+import { User } from './user.interface';
 
 const hasGivenAge = (requiredAge: number): ((user: User) => boolean) => {
   return (user: User): boolean => user.age >= requiredAge;
