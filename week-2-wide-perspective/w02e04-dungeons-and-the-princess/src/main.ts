@@ -28,49 +28,25 @@ const knightBruce = new Person('Bruce', 'knight');
 // Próba "odbicia" królewny z podziemi lochów:
 
 // Misja ratunkowa nr 1:
-try {
-  hades.initTheBarricades();
-  kingdom.gotoTheDungeon(knightJohn);
-  kingdom.gotoTheDungeon(knightBrienne);
-  kingdom.gotoTheDungeon(kingFrancis);
-} catch (err) {
-  if (err instanceof MissionFailedError) {
-    errorHandler(err);
-  }
-}
+hades.initTheBarricades();
+kingdom.gotoTheDungeon(knightJohn);
+kingdom.gotoTheDungeon(knightBrienne);
+kingdom.gotoTheDungeon(kingFrancis);
 
 // Misja ratunkowa nr 2:
-try {
-  hades.initTheBarricades();
-  kingdom.gotoTheDungeon(knightJohn);
-  kingdom.gotoTheDungeon(knightBrienne);
-  kingdom.gotoTheDungeon(peasantMathew);
-} catch (err) {
-  if (err instanceof MissionFailedError) {
-    errorHandler(err);
-  }
-}
+hades.initTheBarricades();
+kingdom.gotoTheDungeon(knightJohn);
+kingdom.gotoTheDungeon(knightBrienne);
+kingdom.gotoTheDungeon(peasantMathew);
 
 // Misja ratunkowa nr 3:
-try {
-  hades.initTheBarricades();
-  kingdom.gotoTheDungeon(knightBrienne);
-  kingdom.gotoTheDungeon(knightJohn);
-  kingdom.gotoTheDungeon(queenBianca);
-} catch (err) {
-  if (err instanceof MissionFailedError) {
-    errorHandler(err);
-  }
-}
+hades.initTheBarricades();
+kingdom.gotoTheDungeon(knightBrienne);
+kingdom.gotoTheDungeon(knightJohn);
+kingdom.gotoTheDungeon(queenBianca);
 
 // Misja ratunkowa 4:
-try {
-  hades.initTheBarricades();
-  kingdom.gotoTheDungeon(knightBrienne);
-  kingdom.gotoTheDungeon(knightJohn);
-  kingdom.gotoTheDungeon(knightBruce);
-} catch (err) {
-  if (err instanceof MissionFailedError) {
-    errorHandler(err);
-  }
-}
+hades.initTheBarricades();
+kingdom.gotoTheDungeon(knightBrienne);
+kingdom.gotoTheDungeon(knightJohn);
+kingdom.gotoTheDungeon(knightBruce);
