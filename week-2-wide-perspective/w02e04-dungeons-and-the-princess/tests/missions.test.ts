@@ -7,19 +7,33 @@ import {
 } from '../src/missions'
 
 describe('Missions', () => {
-    test('King shouldn\'t enter the underground!', () => {
-        expect(startFirstMission).toThrowError()
+    describe.each([
+        { location: /underground/i }
+    ])('Undergrounds should throw an error', ({ location }) => {
+        test('King cannot enter undergrounds', () => {
+            expect(startFirstMission).toThrowError(location)
+        })
     })
 
-    test('Peasant shouldn\'t enter the underground!', () => {
-        expect(startSecondMission).toThrowError()
+    describe.each([
+        { location: /castle/i }
+    ])('Castle should throw an error', ({ location }) => {
+        test('Peasant cannot enter the castle', () => {
+            expect(startSecondMission).toThrowError(location)
+        })
     })
 
-    test('Queen shouldn\'t enter the dungeon!', () => {
-        expect(startThirdMission).toThrowError()
+    describe.each([
+        { location: /dungeon/i }
+    ])('Should throw an error from the dungeon', ({ location }) => {
+        test('Queen cannot enter the dungeon', () => {
+            expect(startThirdMission).toThrowError(location)
+        })
     })
 
-    test('Mission composed of knights should end with success!', () => {
-        expect(startFourthMission).not.toThrowError()
+    describe('Should end with success', () => {
+        test('Mission composed of knights only should end with success', () => {
+            expect(startFourthMission).not.toThrowError()
+        })
     })
 })
