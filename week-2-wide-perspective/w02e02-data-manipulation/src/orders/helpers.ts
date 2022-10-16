@@ -1,27 +1,34 @@
-import { Order } from "./orders.fake-data";
+import { OrderType } from "../model/orders";
 
-export const compose =
-  (...fns) =>
-  (x) =>
-    fns.reduceRight((acc, fn) => fn(acc), x);
+export const wait = (time: number): Promise<void> =>
+  new Promise((res) => {
+    setTimeout(res, time);
+  });
 
-const getProperty =
+export const generateId = (): string =>
+  (String(1e7) + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c: string) =>
+    (
+      Number(c) ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (Number(c) / 4)))
+    ).toString(16)
+  );
+
+export const getProperty =
   <T>(property: keyof T) =>
   (obj: T) =>
     obj[property];
-const getHighestValue = (list: number[]) =>
+
+export const getHighestValue = (list: number[]) =>
   list.reduce((a, b) => (a < b ? b : a), 0);
-const sum = (list: number[]) => list.reduce((a, b) => a + b, 0).toFixed(2);
-const getByYear =
+
+export const sum = (list) => list.reduce((a, b) => a + b, 0).toFixed(2);
+
+export const getByYear =
   (year = new Date().getFullYear()) =>
-  (list: Order[]) =>
+  (list: OrderType[]) =>
     list.filter((order) => new Date(order.orderDate).getFullYear() === year);
 
-const getSales = (list: Order[]) => list.map(getProperty<Order>("sale"));
-
-export const getTotalIncome = compose(sum, getSales);
-export const getBestSaleOrder = compose(getHighestValue, getSales);
-export const getCurrentYear = compose(getByYear());
+export const getSales = (list) => list.map(getProperty("sale"));
 
 export const setComponentData = (id: string, data: string): void => {
   const mountPoint = document.querySelector(`[data-tile="${id}"]`);

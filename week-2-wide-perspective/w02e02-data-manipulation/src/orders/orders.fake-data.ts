@@ -1,4 +1,5 @@
-export const ordersFakeData: Order[] = [
+
+export const ordersFakeData = [
   {
     id: "1821c3aa-a51b-4ff2-8b3e-13db71ab2c5e",
     orderNumber: "01/2022",
@@ -91,17 +92,3 @@ export const ordersFakeData: Order[] = [
   },
 ];
 
-export type Order = {
-  id: string;
-  orderNumber: string;
-  orderDate: string;
-  sale: number;
-};
-
-export const getOrders = (): Promise<Order[]> => {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(ordersFakeData);
-    }, 1000);
-  });
-};

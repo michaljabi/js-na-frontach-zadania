@@ -1,20 +1,20 @@
-import { getOrders } from "./orders/orders.fake-data";
+import { ordersFakeData } from "./orders/orders.fake-data";
 import { setAnnualOrders } from "./orders/tiles/AnnualOrdersTile";
 import { setBestSale } from "./orders/tiles/BestSaleTile";
 import { setTotalIncome } from "./orders/tiles/TotalIncomeTile";
+import { initAddOrderButton } from "./orders/tiles/AddOrderButton";
+import { Orders } from "./model/orders";
 import { setTotalOrders } from "./orders/tiles/TotalOrdersTile";
-import {
-  getBestSaleOrder,
-  getCurrentYear,
-  getTotalIncome,
-} from "./orders/helpers";
+
+const ordersStore = new Orders(ordersFakeData);
 
 const init = async () => {
-  const orders = await getOrders();
-  setAnnualOrders(getCurrentYear(orders));
-  setBestSale(getBestSaleOrder(orders));
-  setTotalIncome(getTotalIncome(orders));
-  setTotalOrders(orders.length.toString());
+  const ordersList = await ordersStore.getAllOrders();
+  setAnnualOrders(ordersStore.getCurrentYear());
+  setBestSale(ordersStore.getBestSale());
+  setTotalIncome(ordersStore.getTotalIncome());
+  setTotalOrders(ordersList);
+  initAddOrderButton(ordersStore);
 };
 
 init();
