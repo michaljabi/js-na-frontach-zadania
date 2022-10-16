@@ -1,19 +1,11 @@
 import { BehaviorSubject, map, Observable } from "rxjs";
 import {
   generateId,
+  getBestSale,
   getByYear,
-  getHighestValue,
-  getSales,
-  sum,
+  getTotalIncome,
   wait,
 } from "../orders/helpers";
-
-const createOrder = (sale: number, orderNumber: string): OrderType => ({
-  id: generateId(),
-  orderDate: new Date().toISOString(),
-  sale,
-  orderNumber,
-});
 
 export type OrderType = {
   id: string;
@@ -21,6 +13,13 @@ export type OrderType = {
   orderDate: string;
   sale: number;
 };
+
+const createOrder = (sale: number, orderNumber: string): OrderType => ({
+  id: generateId(),
+  orderDate: new Date().toISOString(),
+  sale,
+  orderNumber,
+});
 
 export class Orders {
   #source = new BehaviorSubject<OrderType[]>([]);
@@ -30,11 +29,11 @@ export class Orders {
   }
 
   getBestSale(): Observable<number> {
-    return this.#source.pipe(map(getSales), map(getHighestValue));
+    return this.#source.pipe(map(getBestSale));
   }
 
   getTotalIncome(): Observable<number> {
-    return this.#source.pipe(map(getSales), map(sum));
+    return this.#source.pipe(map(getTotalIncome));
   }
 
   getCurrentYear(): Observable<OrderType[]> {
