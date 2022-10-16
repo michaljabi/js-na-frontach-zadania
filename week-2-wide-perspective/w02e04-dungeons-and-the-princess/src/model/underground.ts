@@ -6,31 +6,36 @@ export class Underground {
 
     constructor(private prisoner: Person) { }
 
-    enter(savior: Person) {
-        // #RQ3: king cannot enter Underground !
+    enter(savior: Person): void {
+        this.throwIfPersonNotAllow(savior)
         savior.shoutTheName()
         this.saveThePrisoner(savior)
     }
 
-    private saveThePrisoner(savior: Person) {
-        // #RQ4: only knight can attempt to save prisoner!
-        // #RQ5: If not knight Evil dragon will set up new barricade
-        // #RQ6: one knight will remove one barricade
+    private saveThePrisoner(savior: Person): void {
+        if (savior.title === 'knight') {
+            this.removeBarricade()
+        };
         if (this.hasNoBarricades()) {
             this.prisoner.sayThanks()
         }
     }
 
-    // Clean state:
-    initTheBarricades() {
+    initTheBarricades(): void {
         this.noOfBarricades = Underground.INITIAL_NO_OF_BARRICADES
     }
 
-    private removeBarricade() {
+    private removeBarricade(): void {
         this.noOfBarricades -= 1
     }
 
-    private hasNoBarricades() {
+    private hasNoBarricades(): boolean {
         return this.noOfBarricades === 0
+    }
+
+    private throwIfPersonNotAllow(person: Person): void {
+        if (person.title === 'king') {
+            throw new Error("King can not be in the underground. We don't have enough saviors for the rescue mission and we all will die! Mission failed");
+        }
     }
 }
