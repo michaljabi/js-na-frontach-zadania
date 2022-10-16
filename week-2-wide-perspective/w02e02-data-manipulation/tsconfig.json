@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "target": "esnext",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "strict": true,
+    "useDefineForClassFields": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "sourceMap": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ]
+  },
+}
