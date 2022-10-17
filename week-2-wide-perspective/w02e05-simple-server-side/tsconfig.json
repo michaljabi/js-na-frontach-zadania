@@ -6,6 +6,10 @@
     "lib": ["esnext"],
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  }
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "@types",
+      "./node_modules/@types",
+    ]  
+  },
 }

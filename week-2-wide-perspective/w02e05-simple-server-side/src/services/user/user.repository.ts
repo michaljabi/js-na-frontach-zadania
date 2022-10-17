@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import { Service } from "typedi";
 import { dbClient } from "../../database/client";
 
 @Service()
@@ -16,6 +16,6 @@ export class UserRepository {
   }
 
   remove(id: string) {
-    return dbClient.user.delete({ where: { id } })
+    return dbClient.user.delete({ where: { id } });
   }
 }
