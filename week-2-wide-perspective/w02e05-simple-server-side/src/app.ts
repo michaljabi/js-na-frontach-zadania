@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import 'express-async-errors';
 import express, { NextFunction, Request, Response } from "express";
 import { apiRouter } from "./rest/v1";
 import cookieParser from 'cookie-parser';

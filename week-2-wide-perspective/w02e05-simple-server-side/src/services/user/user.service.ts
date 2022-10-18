@@ -26,4 +26,13 @@ export class UserService {
 
     return user
   }
+
+  public async getById(id: string) {
+    const user =  this.userRepo.getUserById(id);
+    if (!user) {
+      throw new BaseHttpError("User not found", 404, "USER_NOT_FOUND");
+    }
+
+    return user
+  }
 }

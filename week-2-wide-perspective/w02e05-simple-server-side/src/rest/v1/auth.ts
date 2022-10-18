@@ -9,19 +9,21 @@ const authRouter = express.Router();
 authRouter.post("/register", async (req, res) => {
   const authService = Container.get(AuthService);
   const token = await authService.register(req.body.email, req.body.password);
-  res.status(204).cookie(authService.TOKEN_COOKIE_KEY, token);
+  res.cookie(authService.TOKEN_COOKIE_KEY, token);
+  res.status(204).send()
 });
 
 authRouter.post("/login", async (req, res) => {
   const authService = Container.get(AuthService);
   const token = await authService.login(req.body.email, req.body.password);
-  res.status(204).cookie(authService.TOKEN_COOKIE_KEY, token);
+  res.cookie(authService.TOKEN_COOKIE_KEY, token);
+  res.status(204).send()
 });
 
 authRouter.get("/me", isAuth, async (req: Request, res: Response) => {
   const userService = Container.get(UserService);
   const user = await userService.getByEmail(req.user.email);
-  res.status(200).json({ ...user });
+  res.status(200).json({ ...user, password: '' });
 });
 
 authRouter.get("/logout", isAuth, async (req: Request, res: Response) => {

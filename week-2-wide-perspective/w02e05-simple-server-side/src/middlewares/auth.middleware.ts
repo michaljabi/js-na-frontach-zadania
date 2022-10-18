@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import Container from "typedi";
 import { AuthService } from "../services/auth/auth.service";
+import { UserService } from "../services/user/user.service";
 import { BaseHttpError } from "../utils/errors";
 
 export const isAuth = async (
@@ -17,10 +18,17 @@ export const isAuth = async (
 
   const userPayload = await authService.getUserFromToken(token);
 
-  if (!userPayload.email) {
+  if (!userPayload.id) {
     return next(new BaseHttpError("Unathorized", 401, "UNATHORIZED"));
   }
 
-  req.user = userPayload;
+  const userService = Container.get(UserService);
+  const user = await userService.getById(userPayload.id);
+
+  if (!user) {
+    return next(new BaseHttpError("Unathorized", 401, "UNATHORIZED"));
+  }
+
+  req.user = { id: user.id, email: user.email };
   next();
 };

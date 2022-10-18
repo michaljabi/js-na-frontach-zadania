@@ -12,7 +12,7 @@ datasource db {
 
 model Product {
   id        String      @id @default(uuid())
-  name      String
+  name      String      @unique
   price     Decimal
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt
@@ -31,8 +31,6 @@ model User {
 
 model Order {
   id        String      @id @default(uuid())
-  email     String      @unique
-  name      String?
   createdAt DateTime    @default(now())
   items     OrderItem[]
   invoice   Invoice?
