@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   const product1 = await prisma.product.upsert({
-    where: {id: '1'},
+    where: { name: "Product 1" },
     update: {},
     create: {
       name: "Product 1",
@@ -12,7 +12,7 @@ async function main() {
   });
 
   const product2 = await prisma.product.upsert({
-    where: {id: '1'},
+    where: { name: "Product 2" },
     update: {},
     create: {
       name: "Product 2",
@@ -21,7 +21,7 @@ async function main() {
   });
 
   const product3 = await prisma.product.upsert({
-    where: {id: '1'},
+    where: { name: "Product 3" },
     update: {},
     create: {
       name: "Product 3",
@@ -29,7 +29,7 @@ async function main() {
     },
   });
 
-  console.log(product1, product2, product3)
+  console.log(product1, product2, product3);
 }
 
 main()

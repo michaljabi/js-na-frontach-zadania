@@ -1,18 +1,32 @@
-import { Prisma } from '@prisma/client';
+import { Prisma } from "@prisma/client";
 import { Service } from "typedi";
 import { dbClient } from "../../database/client";
 import { BaseHttpError } from "../../utils/errors";
 
 @Service()
 export class OrderRepository {
-  getById(id: string, userId: string) {
-    return dbClient.order.findMany({ where: { id, userId } });
+  async getById(id: string, userId: string) {
+    const [order] = await dbClient.order.findMany({
+      where: { id, userId },
+      include: {
+        items: true,
+      },
+    });
+
+    if (!order) {
+      throw new BaseHttpError("Order not found", 404, "ORDER_NOT_FOUND");
+    }
+
+    return order;
   }
 
   getAll(userId: string) {
-    return dbClient.order.findMany({ where: { userId }, include: {
-        items: true, // All posts where authorId == 20
-      }, });
+    return dbClient.order.findMany({
+      where: { userId },
+      include: {
+        items: true,
+      },
+    });
   }
 
   async create(userId: string, products: { id: string; quantity: number }[]) {
@@ -22,7 +36,11 @@ export class OrderRepository {
       )
     );
 
-    const orderItems: {productId: string, quantity: number, price: Prisma.Decimal}[] = [];
+    const orderItems: {
+      productId: string;
+      quantity: number;
+      price: Prisma.Decimal;
+    }[] = [];
 
     products.forEach(({ id, quantity }) => {
       const product = resolvedProducts.find((product) => product?.id === id);
