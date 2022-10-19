@@ -6,7 +6,17 @@
  *
  * */
 
-const user: any = {
+ interface User {
+  name: string,
+  age: number,
+  email: string,
+  address: {
+    street: string,
+    no: number
+  },
+}
+
+const user: User = {
   name: 'Andy',
   age: 30,
   email: 'andy@mail-me-tommorow.com',
@@ -16,12 +26,12 @@ const user: any = {
   },
 }
 
-function hasAddress(user: any): any {
+function hasAddress(user: User): boolean {
   return Boolean(user.address)
 }
 
-function hasGivenAge(requiredAge: any): any {
-  return (user: any): any => user.age >= requiredAge
+function hasGivenAge(requiredAge: number): any {
+  return (user: User): boolean => user.age >= requiredAge
 }
 
 const isAdult = hasGivenAge(18)
