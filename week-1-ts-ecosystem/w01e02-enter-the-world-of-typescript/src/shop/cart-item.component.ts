@@ -1,19 +1,12 @@
 import { div } from '../framework/dom-creators.js';
-import { Price } from '../shared/types/price.interface.js';
+import { CartItem } from '../shared/types/cartItem.interface.js';
 
-interface Args {
-  name: string;
-  amount: string;
-  unit: string;
-  price: Price;
-}
-
-export function cartItem({ name, amount, unit, price }: Args) {
+export function cartItem({ name, amount, unit, price }: CartItem) {
   const $panelBlock = div('panel-block');
   const $name = div();
   $name.textContent = name;
   const $amount = div('ml-auto');
-  $amount.textContent = amount;
+  $amount.textContent = `${amount}`;
   const $unit = div('tag');
   $unit.textContent = unit;
   const $price = div('ml-4');
