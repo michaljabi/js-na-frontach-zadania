@@ -4,11 +4,11 @@ import { cartItemSum } from './cart-item-sum.component';
 import { cartItem } from './cart-item.component';
 
 interface Args {
-  heading: string;
+  heading?: string;
   items: CartItem[];
 }
 
-export function cartPanel({ heading = 'Cart Items', items }: Args) {
+export function cartPanel({ items, heading = 'Cart Items' }: Args) {
   const $article = article('panel is-primary my-6 w-75 mx-auto');
   const $heading = p('panel-heading');
   $heading.textContent = heading;
