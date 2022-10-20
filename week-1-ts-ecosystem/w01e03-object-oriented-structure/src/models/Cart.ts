@@ -8,16 +8,24 @@ export class Cart<Product extends CartItem> {
   }
 
   get allProductsCount() {
-    return this._products.length;
+    return this._products.reduce((acc, product) => acc + product.amount, 0);
   }
 
   get totalPrice() {
     return this._products
-      .reduce((acc, product) => acc + product.price, 0)
+      .reduce((acc, product) => acc + product.price * product.amount, 0)
       .toFixed(2);
   }
 
   addProduct(newProduct: Product) {
+    const cartProductMatchingNewProduct = this._products.find(
+      (product) =>
+        product.name === newProduct.name && product.price === newProduct.price
+    );
+    if (!!cartProductMatchingNewProduct) {
+      cartProductMatchingNewProduct.amount += newProduct.amount;
+      return;
+    }
     this._products = [newProduct, ...this._products];
   }
 

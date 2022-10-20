@@ -4,10 +4,12 @@ export class CartItem {
   readonly id: string;
   name: string;
   price: number;
+  amount: number;
 
-  constructor(name: string, price: number) {
+  constructor(name: string, amount: number, price: number) {
     this.id = uuidv4();
     this.name = name;
     this.price = price;
+    this.amount = amount;
   }
 }
