@@ -2,4 +2,6 @@ import { root } from './shop/root.component';
 
 const $app = document.querySelector('#app');
 
-$app.append(root());
+if ($app) {
+  $app.append(root());
+}

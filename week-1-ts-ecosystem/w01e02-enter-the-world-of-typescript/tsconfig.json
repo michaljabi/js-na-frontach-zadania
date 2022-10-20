@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
-    "allowJs": true,
-    "target": "es5"
+    "outDir": "./dist",
+    "target": "ES2020",
+    "strict": true
   },
   "include": ["./src/**/*"]
 }
