@@ -1,6 +1,6 @@
 import { CartItem } from '../shared/types/cartItem.interface';
 
-export const items: CartItem[] = [
+export const cartItems: CartItem[] = [
   {
     name: 'Tomatoes',
     amount: 2,

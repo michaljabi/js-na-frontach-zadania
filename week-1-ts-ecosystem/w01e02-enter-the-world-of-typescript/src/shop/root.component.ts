@@ -1,11 +1,11 @@
-import { div } from '../framework/dom-creators.js';
-import { cartPanel } from './cart-panel.component.js';
-import { hero } from './hero.component.js';
-import { items } from '../data/items.js';
+import { div } from '../framework/dom-creators';
+import { cartPanel } from './cart-panel.component';
+import { hero } from './hero.component';
+import { cartItems } from '../data/cartItems';
 
 export function root() {
   const $hero = hero({ title: 'Shopping App', subTitle: 'buy and sell' });
   const $container = div('container');
-  $container.append($hero, cartPanel({ items }));
+  $container.append($hero, cartPanel({ cartItems }));
   return $container;
 }
