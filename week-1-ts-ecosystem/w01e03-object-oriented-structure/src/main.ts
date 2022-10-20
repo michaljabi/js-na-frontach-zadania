@@ -9,3 +9,4 @@
  * Przygotuj koszyki dla każdego rodzaju produktów.
  * - po prostu: wykaż, że przygotowana logika i modele danych — działają :)
  * */
+console.log('1234');
