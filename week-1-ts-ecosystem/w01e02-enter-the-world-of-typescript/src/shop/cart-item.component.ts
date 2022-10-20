@@ -1,5 +1,5 @@
-import { div } from '../framework/dom-creators.js';
-import { CartItem } from '../shared/types/cartItem.interface.js';
+import { div } from '../framework/dom-creators';
+import { CartItem } from '../shared/types/cartItem.interface';
 
 export function cartItem({ name, amount, unit, price }: CartItem) {
   const $panelBlock = div('panel-block');
