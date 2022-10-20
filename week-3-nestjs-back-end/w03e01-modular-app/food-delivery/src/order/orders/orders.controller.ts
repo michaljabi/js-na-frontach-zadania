@@ -1,21 +1,32 @@
-import { Controller, Get, Request, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { OrderProductService } from '../orderProducts/orderProducts.service';
 import { OrdersService } from './orders.service';
 
 @Controller()
 export class OrdersController {
-  constructor(
-    private ordersService: OrdersService,
-    private orderProductService: OrderProductService,
-  ) {}
+  constructor(private ordersService: OrdersService) {}
+
   @UseGuards(JwtAuthGuard)
   @Get('orders')
-  getProfile(@Request() req) {
-    const orders = this.ordersService.getAll(req.user.id);
-    return orders.map((order) => ({
-      ...order,
-      items: this.orderProductService.getByOrderId(order.id),
-    }));
+  getOrders(@Request() req) {
+    return this.ordersService.getAll(req.user.id);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('orders')
+  createOrder(@Request() req) {
+    const { products = [], restaurantId } = req.body;
+    if (!products.length || !restaurantId) {
+      throw new HttpException('Wrong payload', HttpStatus.BAD_REQUEST);
+    }
+    return this.ordersService.create(req.user.id, products, restaurantId);
   }
 }
