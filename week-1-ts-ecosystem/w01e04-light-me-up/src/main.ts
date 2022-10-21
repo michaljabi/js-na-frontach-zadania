@@ -8,14 +8,8 @@
  * Dodatkowo — rzucać błąd, jeśli zapas mocy się wyczerpie.
  * */
 
-class PowerSource {
-  private energySupply = 100
+import LightBulb from './modules/LightBulb';
+import PowerSource from './modules/PowerSource';
 
-  consume(energy) {
-    this.energySupply -= energy
-  }
-}
-
-class LightBulb {
-  protected readonly powerConsumption = 20
-}
+const powerSource = new PowerSource();
+const lightBulb = new LightBulb();
