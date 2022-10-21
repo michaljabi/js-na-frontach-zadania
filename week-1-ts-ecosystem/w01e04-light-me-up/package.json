@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "excercise1": "nodemon src/e1.ts",
+    "excercise2": "nodemon src/e2.ts",
     "build": "tsc"
   },
   "devDependencies": {

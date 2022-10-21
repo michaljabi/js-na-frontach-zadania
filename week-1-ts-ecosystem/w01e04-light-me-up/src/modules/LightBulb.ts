@@ -9,6 +9,16 @@ export default class LightBulb {
   }
 
   powerOnForSeconds(seconds: number) {
-    this.powerSource.consume(this.watts * seconds);
+    const timeInterval = 0.001;
+    console.log('light on');
+    const interval = setInterval(() => {
+      if (seconds <= 0) {
+        console.log('light off');
+        clearInterval(interval);
+        return;
+      }
+      this.powerSource.consume(this.watts * timeInterval);
+      seconds -= timeInterval;
+    }, 1000 * timeInterval);
   }
 }
