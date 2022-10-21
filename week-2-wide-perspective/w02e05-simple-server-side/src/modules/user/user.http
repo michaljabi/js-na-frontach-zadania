@@ -1,0 +1,22 @@
+
+@localhost=http://localhost:5000
+
+
+POST {{localhost}}/auth/login
+Content-Type: application/json
+
+{
+	"username": "franek123",
+	"password":"franek123"
+}
+
+
+###
+POST {{localhost}}/auth/register
+
+Content-Type: application/json
+
+{
+	"username": "franek123",
+	"password":"franek123"
+}

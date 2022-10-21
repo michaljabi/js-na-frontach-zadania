@@ -1,0 +1,1063 @@
+{
+  level: 'warn',
+  message: 'HTTP GET /',
+  metadata: {
+    meta: {
+      req: {
+        url: '/',
+        headers: {
+          host: 'localhost:5000',
+          connection: 'keep-alive',
+          'sec-ch-ua': '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"',
+          'sec-ch-ua-mobile': '?0',
+          'sec-ch-ua-platform': '"macOS"',
+          'upgrade-insecure-requests': '1',
+          'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+          accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+          'sec-fetch-site': 'none',
+          'sec-fetch-mode': 'navigate',
+          'sec-fetch-user': '?1',
+          'sec-fetch-dest': 'document',
+          'accept-encoding': 'gzip, deflate, br',
+          'accept-language': 'en-US,en;q=0.9,pl-PL;q=0.8,pl;q=0.7',
+          cookie: '_ga=GA1.1.792096382.1664734147; _ga_X850MPMZQ6=GS1.1.1664909956.2.1.1664910576.0.0.0'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 3
+    },
+    timestamp: '2022-10-11T11:59:50.076Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '24'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2944
+    },
+    timestamp: '2022-10-12T23:28:16.861Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '26'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2535
+    },
+    timestamp: '2022-10-12T23:29:49.866Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '47'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 21
+    },
+    timestamp: '2022-10-13T01:31:13.764Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '47'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 16
+    },
+    timestamp: '2022-10-13T01:32:34.234Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '25'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2
+    },
+    timestamp: '2022-10-13T01:32:57.590Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '50'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2569
+    },
+    timestamp: '2022-10-13T01:33:07.218Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '49'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 358
+    },
+    timestamp: '2022-10-13T01:36:06.218Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer $2b$10$CMddJKnAUkWXR8971tDTgesLN9xDCMebhjrkbwKF8nLkOqJPP0fUi',
+          accept: '*/*',
+          'content-length': '47'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 15
+    },
+    timestamp: '2022-10-13T01:36:13.644Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /products/1',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products/1',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjIsImlhdCI6MTY2NTYyNTE3MCwiZXhwIjoxNjY2MjI5OTcwfQ.vq9gsfG051gz8m-4CHN1SLJTws_guVvwBDo8QL6RY7A',
+          accept: '*/*',
+          'content-length': '0'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/products/1',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 20
+    },
+    timestamp: '2022-10-13T01:48:23.502Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products/1',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products/1',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer .eyJ1c2VySUQiOjIsImlhdCI6MTY2NTYyNTE3MCwiZXhwIjoxNjY2MjI5OTcwfQ.vq9gsfG051gz8m-4CHN1SLJTws_guVvwBDo8QL6RY7A',
+          accept: '*/*',
+          'content-length': '0'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products/1',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 2
+    },
+    timestamp: '2022-10-13T01:48:42.306Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products/1',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products/1',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjIsImlhdCI6MTY2NTYyNTE3MCwiZXhwIjoxNjY2MjI5OTcwfQ.vq9gsfG051gz8m-4CHN1SLJTws_guVvwBDo8QL6RY7A"',
+          accept: '*/*',
+          'content-length': '0'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products/1',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-13T01:48:48.531Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products/1',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products/1',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '0'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products/1',
+        query: {}
+      },
+      res: { statusCode: 403 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-18T23:35:52.629Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /login',
+  metadata: {
+    meta: {
+      req: {
+        url: '/login',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '45'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/login',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 3
+    },
+    timestamp: '2022-10-18T23:37:01.619Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '45'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 818
+    },
+    timestamp: '2022-10-18T23:37:30.082Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2304
+    },
+    timestamp: '2022-10-18T23:38:48.743Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2260
+    },
+    timestamp: '2022-10-18T23:39:24.179Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2384
+    },
+    timestamp: '2022-10-18T23:40:16.064Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2277
+    },
+    timestamp: '2022-10-18T23:41:01.026Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2242
+    },
+    timestamp: '2022-10-18T23:41:10.319Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2230
+    },
+    timestamp: '2022-10-18T23:41:35.660Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer',
+          accept: '*/*',
+          'content-length': '45'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 2757
+    },
+    timestamp: '2022-10-18T23:42:10.623Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products/1',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products/1',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k"',
+          accept: '*/*',
+          'content-length': '50'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products/1',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 2
+    },
+    timestamp: '2022-10-18T23:44:05.314Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k',
+          accept: '*/*',
+          'content-length': '44'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 4
+    },
+    timestamp: '2022-10-18T23:48:26.426Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k',
+          accept: '*/*',
+          'content-length': '44'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 19
+    },
+    timestamp: '2022-10-18T23:49:59.984Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 403 },
+      responseTime: 8
+    },
+    timestamp: '2022-10-19T14:38:30.215Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          authorization: '{{{{token}}}}',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 403 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-19T14:46:10.882Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          authorization: 'Bearer {{{{token}}}}',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 3
+    },
+    timestamp: '2022-10-19T14:46:27.233Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          authorization: 'Bearer {{{{token}}}}',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-19T14:46:33.611Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          'content-length': '35',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 403 },
+      responseTime: 0
+    },
+    timestamp: '2022-10-19T14:47:09.156Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          authorization: 'Bearer {{{{token}}}}',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-19T14:47:14.243Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /products',
+  metadata: {
+    meta: {
+      req: {
+        url: '/products',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          authorization: 'Bearer {{{token}}}',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/products',
+        query: {}
+      },
+      res: { statusCode: 401 },
+      responseTime: 1
+    },
+    timestamp: '2022-10-19T14:48:07.361Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/register',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/register',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k',
+          accept: '*/*',
+          'content-length': '44'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/register',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 20
+    },
+    timestamp: '2022-10-21T16:05:15.243Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/register',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/register',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k',
+          accept: '*/*',
+          'content-length': '50'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/register',
+        query: {}
+      },
+      res: { statusCode: 409 },
+      responseTime: 3096
+    },
+    timestamp: '2022-10-21T16:13:50.836Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/login',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/login',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjEzNjYyOSwiZXhwIjoxNjY2NzQxNDI5fQ.zkVAMc1kjCuIpfsX-ofpdK_vEPLwDH7KzPstIM6hK8k',
+          accept: '*/*',
+          'content-length': '53'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/login',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2567
+    },
+    timestamp: '2022-10-21T16:17:09.732Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/login',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/login',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          accept: '*/*',
+          'content-length': '49'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/login',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 2268
+    },
+    timestamp: '2022-10-21T17:32:19.789Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/login',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/login',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          accept: '*/*',
+          'content-length': '46'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/login',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 241
+    },
+    timestamp: '2022-10-21T17:32:23.629Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/login',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/login',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          accept: '*/*',
+          'content-length': '43'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/login',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 238
+    },
+    timestamp: '2022-10-21T17:32:27.147Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /auth/register',
+  metadata: {
+    meta: {
+      req: {
+        url: '/auth/register',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          accept: '*/*',
+          'content-length': '43'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/auth/register',
+        query: {}
+      },
+      res: { statusCode: 409 },
+      responseTime: 1235
+    },
+    timestamp: '2022-10-21T17:32:33.317Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /order',
+  metadata: {
+    meta: {
+      req: {
+        url: '/order',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjE5LCJpYXQiOjE2NjYzNzM1NTksImV4cCI6MTY2Njk3ODM1OX0.LLp3RC5TUg9N5-EZ5Ruc5hx5W5lzSjDRGLyVbjx2A0g',
+          accept: '*/*',
+          'content-length': '48'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/order',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 8
+    },
+    timestamp: '2022-10-21T23:13:26.658Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /order',
+  metadata: {
+    meta: {
+      req: {
+        url: '/order',
+        headers: {
+          host: 'localhost:5000',
+          'user-agent': 'insomnia/2022.5.1',
+          'content-type': 'application/json',
+          authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjE5LCJpYXQiOjE2NjYzNzM1NTksImV4cCI6MTY2Njk3ODM1OX0.LLp3RC5TUg9N5-EZ5Ruc5hx5W5lzSjDRGLyVbjx2A0g',
+          accept: '*/*',
+          'content-length': '50'
+        },
+        method: 'POST',
+        httpVersion: '1.1',
+        originalUrl: '/order',
+        query: {}
+      },
+      res: { statusCode: 404 },
+      responseTime: 488
+    },
+    timestamp: '2022-10-21T23:13:40.815Z'
+  }
+}

@@ -1,0 +1,17 @@
+
+@localhost=http://localhost:5000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImlhdCI6MTY2NjE5MDc0NSwiZXhwIjoxNjY2Nzk1NTQ1fQ.n7GrgRDVkekg2Un9WPzM0EezszYF56j3LSa225fQ3BQ
+
+GET {{localhost}}/orders
+Authorization: Bearer {{token}}
+###
+POST {{{localhost}}}/orders
+Authorization: Bearer {{token}}
+
+Content-Type: application/json
+
+[{
+	"id": 1,
+	"name": "Macbook",
+	"price": 6000
+}]
