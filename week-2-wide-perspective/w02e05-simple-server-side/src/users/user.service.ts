@@ -1,11 +1,16 @@
 import { prisma } from '../prisma-client';
 import bcrypt from "bcrypt"
 import { User } from '@prisma/client';
+import { logger } from '../logger';
 
 export const getUserToken = async (email: string, password: string) => {
     const user = await prisma.user.findUnique({ where: { email: email } });
     if (user) {
-        return await bcrypt.compare(password, user.password) ? getToken(user.id) : 'nie';
+        if(await bcrypt.compare(password, user.password)) {
+            return getToken(user.id);
+        } else {
+            throw new Error("Password or email is wrong");
+        }
     }
 }
 

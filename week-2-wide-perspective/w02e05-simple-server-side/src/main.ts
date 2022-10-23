@@ -7,7 +7,7 @@ import { usersController } from './users/users.controller'
 const app = express()
 app.use(express.json())
 
-app.listen(3100)
+app.listen(process.env.PORT)
 app.use('/orders', ordersController)
 app.use('/products', productController)
 app.use('/users', usersController)
