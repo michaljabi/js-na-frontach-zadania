@@ -1,0 +1,32 @@
+GET /orders HTTP/1.1
+Host: localhost:3100
+Content-Type: application/json
+Authorization: Bearer my-token
+
+GET /orders/1 HTTP/1.1
+Host: localhost:3100
+Content-Type: application/json
+Authorization: Bearer my-token
+
+
+POST /orders HTTP/1.1
+Host: localhost:3100
+Content-Type: application/json
+Authorization: Bearer my-token
+
+{
+  "orderProduct": [
+    {
+    "productId": 1,
+    "quantity": 5
+    },
+    {
+    "productId": 2,
+    "quantity": 9
+    },
+    {
+    "productId": 3,
+    "quantity": 20
+    }
+  ]
+}

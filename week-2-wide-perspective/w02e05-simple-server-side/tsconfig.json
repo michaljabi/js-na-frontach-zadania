@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "node16",
+      "types": ["express", "bcrypt"],
+      "sourceMap": true,
+      "outDir": "dist",
+      "rootDir": "./src",
+      "strict": true,
+      "lib": ["ESNext"],
+      "typeRoots": ["./typings", "./node_modules/@types"],
+      "esModuleInterop": true, 
+    }
+  }
