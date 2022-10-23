@@ -10,4 +10,10 @@ export class UsersService {
       where: { email: email.toLowerCase().trim() },
     });
   }
+
+  getOneById(id: number) {
+    return this.prisma.user.findUniqueOrThrow({
+      where: { id: id },
+    });
+  }
 }

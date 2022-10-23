@@ -31,6 +31,16 @@ export class AuthService {
     return this.currentUser;
   }
 
+  async setCurrentUser(token: string): Promise<void> {
+    if (this.validTokens.length > 0) {
+      const val = this.validTokens.find((t) => t.value === token);
+
+      if (val) {
+        this.currentUser = await this.usersService.getOneById(val.userId);
+      }
+    }
+  }
+
   private generateToken(userId: number): Token {
     const date = new Date();
     return {
