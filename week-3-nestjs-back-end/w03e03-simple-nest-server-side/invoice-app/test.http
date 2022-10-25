@@ -1,0 +1,36 @@
+POST http://localhost:3000/auth/register HTTP/1.1
+content-type: application/json
+{
+    "email": "pasekpasek@test.pl",
+    "password": "hejhej"
+}
+
+POST http://localhost:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "pasekpasek@test.pl",
+    "password": "hejhej"
+}
+
+GET http://localhost:3000/products HTTP/1.1
+
+POST http://localhost:3000/orders HTTP/1.1
+content-type: application/json
+
+{
+    "products": [
+        {
+            "id": "ab5ded10-9f64-4df3-9ded-05b11bacf458",
+            "quantity": 2
+        },
+        {
+            "id": "0825d732-c16d-4b59-996b-af40746d995f",
+            "quantity": 5
+        }
+    ]
+}
+
+GET http://localhost:3000/invoices HTTP/1.1
+
+GET http://localhost:3000/orders HTTP/1.1
