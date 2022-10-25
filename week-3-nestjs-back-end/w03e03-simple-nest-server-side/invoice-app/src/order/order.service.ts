@@ -20,11 +20,26 @@ export class OrderService {
     private invoiceService: InvoicesService,
   ) {}
 
-  async findAll(userId: string): Promise<OrderEntity[]> {
-    return await this.orderRepo.find({
-      where: { user: { id: userId } },
-      relations: { user: true, items: true },
+  async getItemsByOrderId(orderId: string) {
+    return this.orderItemRepo.find({
+      where: { order: { id: orderId } },
     });
+  }
+
+  async findAll(userId: string) {
+    const order = await this.orderRepo.find({
+      where: { user: { id: userId } },
+      relations: { user: true },
+    });
+
+    return await Promise.all(
+      order.map((order) => {
+        return this.getItemsByOrderId(order.id).then((items) => ({
+          ...order,
+          items,
+        }));
+      }),
+    );
   }
 
   async create(userId: string, order: CreateOrderDto) {
@@ -38,7 +53,7 @@ export class OrderService {
       user,
     });
 
-    const orderProductItems = await Promise.all(
+    await Promise.all(
       productItems.map((item) => {
         const product = products.find((prod) => prod.id === item.productId);
         return this.orderItemRepo.save({
@@ -49,11 +64,6 @@ export class OrderService {
         });
       }),
     );
-
-    // const total = orderProductItems.reduce(
-    //   (sum, nextItem) => sum + nextItem.price,
-    //   0,
-    // );
 
     this.invoiceService.create(newOrder);
 

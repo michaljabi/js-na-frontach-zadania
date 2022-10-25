@@ -17,5 +17,6 @@ import { InvoiceModule } from 'src/invoice/invoice.module';
   ],
   providers: [OrderService],
   controllers: [OrderController],
+  exports: [OrderService],
 })
 export class OrderModule {}

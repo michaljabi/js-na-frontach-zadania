@@ -31,8 +31,4 @@ export class OrderEntity {
 
   @UpdateDateColumn()
   updtedAt: string;
-
-  @OneToOne((type) => InvoiceEntity, (invoice) => invoice.id)
-  @JoinColumn()
-  invoice: InvoiceEntity;
 }
