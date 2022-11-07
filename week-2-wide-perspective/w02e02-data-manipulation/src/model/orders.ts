@@ -1,56 +1,55 @@
-import { BehaviorSubject, map, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable, switchMap, timer } from "rxjs";
 import {
   generateId,
   getBestSale,
   getByYear,
   getTotalIncome,
-  wait,
+  getYear,
 } from "../orders/helpers";
+import { OrderType } from "./orders.types";
 
-export type OrderType = {
-  id: string;
-  orderNumber: string;
-  orderDate: string;
-  sale: number;
-};
-
-const createOrder = (sale: number, orderNumber: string): OrderType => ({
+const createOrder = (sale: number, orderNumber: number): OrderType => ({
   id: generateId(),
   orderDate: new Date().toISOString(),
   sale,
-  orderNumber,
+  orderNumber: `${orderNumber}/${getYear()}`,
 });
 
 export class Orders {
   #source = new BehaviorSubject<OrderType[]>([]);
+
+  #bestSale = this.#source.pipe(map(getBestSale));
+
+  #totalIncome = this.#source.pipe(map(getTotalIncome));
 
   constructor(orders: OrderType[]) {
     this.#source.next(orders);
   }
 
   getBestSale(): Observable<number> {
-    return this.#source.pipe(map(getBestSale));
+    return this.#bestSale;
   }
 
   getTotalIncome(): Observable<number> {
-    return this.#source.pipe(map(getTotalIncome));
+    return this.#totalIncome;
   }
 
-  getCurrentYear(): Observable<OrderType[]> {
-    return this.#source.pipe(map(getByYear()));
+  getOrdersByYear(year: string): Observable<OrderType[]> {
+    return this.#source.pipe(map(getByYear(year)));
   }
 
-  async getAllOrders(): Promise<Observable<OrderType[]>> {
-    await wait(1000);
-    return this.#source.asObservable();
+  getAllOrders(): Observable<OrderType[]> {
+    return timer(1000).pipe(switchMap(() => this.#source));
   }
 
-  async addOrder(sale: number): Promise<void> {
-    await wait(1000);
-    const newOrder = createOrder(
-      sale,
-      `${this.#source.value.length}/${new Date().getFullYear()}`
-    );
-    this.#source.next([...this.#source.value, newOrder]);
+  getTotalOrdersCount() {
+    return this.getAllOrders().pipe(map(({ length }) => length));
+  }
+
+  addOrder(sale: number): void {
+    const newOrder = createOrder(sale, this.#source.value.length);
+    timer(1000).subscribe(() => {
+      this.#source.next([...this.#source.value, newOrder]);
+    });
   }
 }

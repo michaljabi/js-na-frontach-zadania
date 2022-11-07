@@ -1,10 +1,11 @@
 import { Orders } from "../../model/orders";
 
-export const initAddOrderButton = (store: Orders) => {
-  const button = document.querySelector('[data-button="add-order"]');
+const button = document.querySelector('[data-button="add-order"]');
+
+export function initAddOrderButton(orders: Orders) {
   if (button) {
-    button.addEventListener("click", async () => {
-      await store.addOrder(500);
+    button.addEventListener("click",  () => {
+      orders.addOrder(22222);
     });
   }
-};
+}

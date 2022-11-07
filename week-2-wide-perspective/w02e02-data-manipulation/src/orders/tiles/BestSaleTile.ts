@@ -1,5 +1,8 @@
 import { setComponentData } from "../helpers";
-import { Observable } from "rxjs";
+import { Orders } from "../../model/orders";
 
-export const setBestSale = (data: Observable<number>) =>
-  data.subscribe((value) => setComponentData("best-sale", value.toString()));
+const setData = setComponentData("best-sale");
+
+export function setBestSale(orders: Orders) {
+  orders.getBestSale().subscribe(setData);
+}

@@ -1,30 +1,23 @@
-import { OrderType } from "../../model/orders";
-import { Observable } from "rxjs";
+import { Orders } from "../../model/orders";
+import { getYear } from "../helpers";
 
-function makeLiElement({ orderDate, orderNumber }) {
+function makeLiElement(innerText: string) {
   const li = document.createElement("li");
-  li.className = "panel-block";
-  li.innerText = `${orderNumber} | ${orderDate}`;
-  return li;
+  return Object.assign(li, { className: "panel-block", innerText });
 }
 
-export const setAnnualOrders = (orders: Observable<OrderType[]>) => {
-  const componentId = "annual-orders";
-  const mountPoint = document.querySelector(`[data-tile="${componentId}"]`);
-  const subTitle = mountPoint?.querySelector("[data-subtitle]");
-  const panel = mountPoint?.querySelector("[data-panel]");
-  if (!subTitle || !panel) return;
-  orders.subscribe((list) => {
-    subTitle.textContent = `Year ${new Date().getFullYear()}`;
-    panel.innerHTML = "";
+const componentId = "annual-orders";
+const mountPoint = document.querySelector(`[data-tile="${componentId}"]`);
+const subTitle = mountPoint?.querySelector("[data-subtitle]");
+const panel = mountPoint?.querySelector("[data-panel]");
 
-    for (const order of list) {
-      panel.appendChild(
-        makeLiElement({
-          orderDate: order.orderDate,
-          orderNumber: order.orderNumber,
-        })
-      );
-    }
+export function setAnnualOrders(orders: Orders, year = getYear()) {
+  if (!subTitle || !panel) return;
+  subTitle.textContent = `Year ${year}`;
+  orders.getOrdersByYear(year).subscribe((list) => {
+    panel.innerHTML = "";
+    list.forEach(({ orderDate, orderNumber }) =>
+      panel.appendChild(makeLiElement(`${orderNumber} | ${orderDate}`))
+    );
   });
-};
+}

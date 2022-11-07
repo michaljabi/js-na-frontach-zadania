@@ -1,8 +1,8 @@
 import { compose } from "ramda";
-import { OrderType } from "../model/orders";
+import { OrderType } from "../model/orders.types";
 
-export const wait = (time: number): Promise<void> =>
-  new Promise((res) => setTimeout(res, time));
+export const getYear = (date: string | number | Date = new Date()) =>
+  new Date(date).getFullYear().toString(10);
 
 export const generateId = (): string =>
   (String(1e7) + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c: string) =>
@@ -12,25 +12,35 @@ export const generateId = (): string =>
     ).toString(16)
   );
 
-export const getByYear =
-  (year = new Date().getFullYear()) =>
-  (list: OrderType[]) =>
-    list.filter((order) => new Date(order.orderDate).getFullYear() === year);
+export const getByYear = (year: string) => (list: OrderType[]) =>
+  list.filter((order) => getYear(order.orderDate) === getYear(year));
+
+export const normalizeFloat = (item) => Number(item.toFixed(2));
 
 export const getProperty =
-  <T>(property: keyof T) =>
-  (obj: T) =>
+  <T, P extends keyof T>(property: P) =>
+  (obj: T): T[P] =>
     obj[property];
+
 export const getHighestValue = (list: number[]) =>
   list.reduce((a, b) => (a < b ? b : a), 0);
-export const sum = (list) => list.reduce((a, b) => a + b, 0).toFixed(2);
-export const getSales = (list) => list.map(getProperty("sale"));
-export const getBestSale = (list) => compose(getHighestValue, getSales)(list);
-export const getTotalIncome = (list) => compose(sum, getSales)(list);
 
-export const setComponentData = (id: string, data: string): void => {
-  const mountPoint = document.querySelector(`[data-tile="${id}"]`);
-  const content = mountPoint?.querySelector("[data-content]");
-  if (!content) return;
-  content.innerHTML = data;
-};
+export const sum = (list: number[]) => list.reduce((a, b) => a + b, 0);
+
+export const getSales = (list: OrderType[]) =>
+  list.map(getProperty<OrderType, "sale">("sale"));
+
+export const getBestSale = (list: OrderType[]) =>
+  compose(getHighestValue, getSales)(list);
+
+export const getTotalIncome = (list: OrderType[]) =>
+  compose(normalizeFloat, sum, getSales)(list);
+
+export const setComponentData =
+  (id: string): ((data: string | number) => void) =>
+  (data) => {
+    const mountPoint = document.querySelector(`[data-tile="${id}"]`);
+    const content = mountPoint?.querySelector("[data-content]");
+    if (!content) return;
+    content.innerHTML = data.toString();
+  };

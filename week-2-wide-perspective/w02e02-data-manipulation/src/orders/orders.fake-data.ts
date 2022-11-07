@@ -1,4 +1,3 @@
-
 export const ordersFakeData = [
   {
     id: "1821c3aa-a51b-4ff2-8b3e-13db71ab2c5e",
